@@ -1,23 +1,9 @@
 import { useEffect, useRef, useState } from "react";
+import { Code, Database, Monitor, Wrench } from "lucide-react";
 
-interface Skill {
-  name: string;
-  level: number;
-  category: "frontend" | "backend" | "other";
-}
-
-const skills: Skill[] = [
-  { name: "HTML & CSS", level: 90, category: "frontend" },
-  { name: "JavaScript", level: 85, category: "frontend" },
-  { name: "React", level: 80, category: "frontend" },
-  { name: "C#", level: 85, category: "backend" },
-  { name: ".NET", level: 80, category: "backend" },
-  { name: "SQL", level: 75, category: "backend" },
-  { name: "Entity Framework", level: 70, category: "backend" },
-  { name: "MS SQL", level: 70, category: "backend" },
-  { name: "Visual Studio Code", level: 90, category: "other" },
-  { name: "CMS", level: 75, category: "other" },
-];
+const frontendSkills = ["HTML & CSS", "JavaScript", "React"];
+const backendSkills = ["C#", ".NET", "SQL", "Entity Framework", "MS SQL"];
+const toolsSkills = ["Visual Studio Code", "CMS", "Git"];
 
 const softSkills = [
   "Ansvarstagande",
@@ -27,22 +13,34 @@ const softSkills = [
   "Teamleading",
 ];
 
-const SkillBar = ({ skill, isVisible }: { skill: Skill; isVisible: boolean }) => (
-  <div className="space-y-2">
-    <div className="flex justify-between items-center">
-      <span className="text-sm font-medium text-foreground">{skill.name}</span>
-      <span className="text-xs text-muted-foreground">{skill.level}%</span>
-    </div>
-    <div className="skill-bar">
-      <div
-        className="skill-bar-fill"
-        style={{
-          width: isVisible ? `${skill.level}%` : "0%",
-        }}
-      />
-    </div>
-  </div>
-);
+const SkillBadge = ({ 
+  skill, 
+  index, 
+  isVisible, 
+  variant = "default" 
+}: { 
+  skill: string; 
+  index: number; 
+  isVisible: boolean;
+  variant?: "default" | "accent" | "primary";
+}) => {
+  const variantStyles = {
+    default: "bg-secondary text-secondary-foreground border-border",
+    accent: "bg-accent/10 text-accent border-accent/30",
+    primary: "bg-primary/10 text-primary border-primary/30",
+  };
+
+  return (
+    <span
+      style={{ animationDelay: `${index * 0.05}s` }}
+      className={`inline-flex items-center px-4 py-2.5 rounded-lg text-sm font-medium border transition-all hover:scale-105 hover:shadow-md ${
+        variantStyles[variant]
+      } ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
+    >
+      {skill}
+    </span>
+  );
+};
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -65,9 +63,6 @@ const Skills = () => {
     return () => observer.disconnect();
   }, []);
 
-  const frontendSkills = skills.filter((s) => s.category === "frontend");
-  const backendSkills = skills.filter((s) => s.category === "backend");
-
   return (
     <section ref={sectionRef} className="py-20 bg-background">
       <div className="container mx-auto px-6">
@@ -80,73 +75,104 @@ const Skills = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Frontend Skills */}
-          <div className="space-y-6">
-            <h3 className="font-display text-xl font-semibold text-foreground flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full bg-accent" />
-              Frontend
-            </h3>
-            <div className="space-y-5">
+          <div className="space-y-5">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 rounded-lg bg-accent/10">
+                <Monitor className="w-5 h-5 text-accent" />
+              </div>
+              <h3 className="font-display text-lg font-semibold text-foreground">
+                Frontend
+              </h3>
+            </div>
+            <div className="flex flex-wrap gap-2">
               {frontendSkills.map((skill, index) => (
-                <div
-                  key={skill.name}
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                  className={isVisible ? "animate-fade-in-up" : "opacity-0"}
-                >
-                  <SkillBar skill={skill} isVisible={isVisible} />
-                </div>
+                <SkillBadge
+                  key={skill}
+                  skill={skill}
+                  index={index}
+                  isVisible={isVisible}
+                  variant="accent"
+                />
               ))}
             </div>
           </div>
 
           {/* Backend Skills */}
-          <div className="space-y-6">
-            <h3 className="font-display text-xl font-semibold text-foreground flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full bg-primary" />
-              Backend
-            </h3>
-            <div className="space-y-5">
+          <div className="space-y-5">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 rounded-lg bg-primary/10">
+                <Database className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="font-display text-lg font-semibold text-foreground">
+                Backend
+              </h3>
+            </div>
+            <div className="flex flex-wrap gap-2">
               {backendSkills.map((skill, index) => (
-                <div
-                  key={skill.name}
-                  style={{ animationDelay: `${index * 0.1 + 0.3}s` }}
-                  className={isVisible ? "animate-fade-in-up" : "opacity-0"}
-                >
-                  <SkillBar skill={skill} isVisible={isVisible} />
-                </div>
+                <SkillBadge
+                  key={skill}
+                  skill={skill}
+                  index={index + frontendSkills.length}
+                  isVisible={isVisible}
+                  variant="primary"
+                />
               ))}
             </div>
           </div>
 
-          {/* Soft Skills */}
-          <div className="space-y-6 md:col-span-2 lg:col-span-1">
-            <h3 className="font-display text-xl font-semibold text-foreground flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full bg-accent/50" />
-              Personliga egenskaper
-            </h3>
-            <div className="flex flex-wrap gap-3">
-              {softSkills.map((skill, index) => (
-                <span
+          {/* Tools */}
+          <div className="space-y-5">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 rounded-lg bg-secondary">
+                <Wrench className="w-5 h-5 text-muted-foreground" />
+              </div>
+              <h3 className="font-display text-lg font-semibold text-foreground">
+                Verktyg
+              </h3>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {toolsSkills.map((skill, index) => (
+                <SkillBadge
                   key={skill}
-                  style={{ animationDelay: `${index * 0.1 + 0.6}s` }}
-                  className={`px-4 py-2 bg-secondary rounded-full text-sm font-medium text-secondary-foreground ${
-                    isVisible ? "animate-fade-in-up" : "opacity-0"
-                  }`}
-                >
-                  {skill}
-                </span>
+                  skill={skill}
+                  index={index + frontendSkills.length + backendSkills.length}
+                  isVisible={isVisible}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Soft Skills & Languages */}
+          <div className="space-y-5">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 rounded-lg bg-secondary">
+                <Code className="w-5 h-5 text-muted-foreground" />
+              </div>
+              <h3 className="font-display text-lg font-semibold text-foreground">
+                Egenskaper
+              </h3>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {softSkills.map((skill, index) => (
+                <SkillBadge
+                  key={skill}
+                  skill={skill}
+                  index={index + frontendSkills.length + backendSkills.length + toolsSkills.length}
+                  isVisible={isVisible}
+                />
               ))}
             </div>
 
             {/* Languages */}
-            <div className="mt-8">
-              <h4 className="text-sm font-medium text-muted-foreground mb-4">Språk</h4>
-              <div className="flex gap-4">
-                <span className="px-4 py-2 bg-primary text-primary-foreground rounded-full text-sm font-medium">
+            <div className="pt-4 border-t border-border">
+              <h4 className="text-sm font-medium text-muted-foreground mb-3">Språk</h4>
+              <div className="flex gap-2">
+                <span className="px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium">
                   Svenska
                 </span>
-                <span className="px-4 py-2 bg-secondary text-secondary-foreground rounded-full text-sm font-medium">
+                <span className="px-4 py-2 bg-secondary text-secondary-foreground rounded-lg text-sm font-medium">
                   Engelska
                 </span>
               </div>
