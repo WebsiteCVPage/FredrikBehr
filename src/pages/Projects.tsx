@@ -1,12 +1,18 @@
-import { ExternalLink, Github, Code2, Layers } from "lucide-react";
+import { ExternalLink, Github, Code2, Layers, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+
+// Import project images
+import onboardingDashboard from "@/assets/onboarding-dashboard.png";
+import onboardingFlows from "@/assets/onboarding-flows.png";
+import onboardingEditor from "@/assets/onboarding-editor.png";
 
 interface Project {
   title: string;
   description: string;
   technologies: string[];
-  image?: string;
+  images?: string[];
   liveUrl?: string;
   githubUrl?: string;
   featured?: boolean;
@@ -18,6 +24,7 @@ const projects: Project[] = [
     description:
       "Ett komplett HR-system för att hantera on-boarding och off-boarding av anställda. Systemet inkluderar en dashboard med realtidsstatistik, anpassningsbara arbetsflöden med stegvisa processer, rollbaserade ansvar och sökfunktion för anställda.",
     technologies: ["React", "TypeScript", "Supabase", "Tailwind CSS", "PostgreSQL"],
+    images: [onboardingDashboard, onboardingFlows, onboardingEditor],
     featured: true,
   },
   {
@@ -47,13 +54,72 @@ const projects: Project[] = [
   },
 ];
 
-const ProjectCard = ({ project }: { project: Project }) => (
-  <div
-    className={`card-hover bg-card rounded-2xl overflow-hidden border border-border ${
-      project.featured ? "md:col-span-2" : ""
-    }`}
-  >
-    {/* Project Header */}
+const ProjectCard = ({ project }: { project: Project }) => {
+  const [currentImage, setCurrentImage] = useState(0);
+  const hasImages = project.images && project.images.length > 0;
+
+  const nextImage = () => {
+    if (hasImages) {
+      setCurrentImage((prev) => (prev + 1) % project.images!.length);
+    }
+  };
+
+  const prevImage = () => {
+    if (hasImages) {
+      setCurrentImage((prev) => (prev - 1 + project.images!.length) % project.images!.length);
+    }
+  };
+
+  return (
+    <div
+      className={`card-hover bg-card rounded-2xl overflow-hidden border border-border ${
+        project.featured ? "md:col-span-2" : ""
+      }`}
+    >
+      {/* Image Gallery */}
+      {hasImages && (
+        <div className="relative group">
+          <div className="aspect-video overflow-hidden bg-secondary">
+            <img
+              src={project.images![currentImage]}
+              alt={`${project.title} screenshot ${currentImage + 1}`}
+              className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
+          {project.images!.length > 1 && (
+            <>
+              <button
+                onClick={prevImage}
+                className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-background/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
+                aria-label="Previous image"
+              >
+                <ChevronLeft size={20} />
+              </button>
+              <button
+                onClick={nextImage}
+                className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-background/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
+                aria-label="Next image"
+              >
+                <ChevronRight size={20} />
+              </button>
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+                {project.images!.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentImage(idx)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      idx === currentImage ? "bg-accent w-4" : "bg-background/60"
+                    }`}
+                    aria-label={`Go to image ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      )}
+
+      {/* Project Header */}
     <div className="p-6 lg:p-8">
       <div className="flex items-start justify-between gap-4 mb-4">
         <div className="p-3 rounded-xl bg-accent/10">
@@ -93,19 +159,20 @@ const ProjectCard = ({ project }: { project: Project }) => (
       </p>
 
       {/* Technologies */}
-      <div className="flex flex-wrap gap-2">
-        {project.technologies.map((tech) => (
-          <span
-            key={tech}
-            className="px-3 py-1 text-xs font-medium bg-secondary text-secondary-foreground rounded-full"
-          >
-            {tech}
-          </span>
-        ))}
+        <div className="flex flex-wrap gap-2">
+          {project.technologies.map((tech) => (
+            <span
+              key={tech}
+              className="px-3 py-1 text-xs font-medium bg-secondary text-secondary-foreground rounded-full"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Projects = () => {
   return (
