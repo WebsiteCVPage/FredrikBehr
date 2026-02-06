@@ -79,7 +79,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
       {/* Image Gallery */}
       {hasImages && (
         <div className="relative group">
-          <div className="aspect-video overflow-hidden bg-secondary">
+          <div className="aspect-[16/9] max-h-64 overflow-hidden bg-secondary">
             <img
               src={project.images![currentImage]}
               alt={`${project.title} screenshot ${currentImage + 1}`}
