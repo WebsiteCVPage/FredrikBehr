@@ -1,7 +1,8 @@
-import { ExternalLink, Github, Code2, Layers, ChevronLeft, ChevronRight } from "lucide-react";
+import { ExternalLink, Github, Code2, Layers, ChevronLeft, ChevronRight, X, Minus, Square, Circle } from "lucide-react";
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 // Import project images
 import onboardingDashboard from "@/assets/onboarding-dashboard.png";
@@ -56,6 +57,7 @@ const projects: Project[] = [
 
 const ProjectCard = ({ project }: { project: Project }) => {
   const [currentImage, setCurrentImage] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
   const hasImages = project.images && project.images.length > 0;
 
   const nextImage = () => {
@@ -70,53 +72,133 @@ const ProjectCard = ({ project }: { project: Project }) => {
     }
   };
 
+  const BrowserFrame = ({ children, isModal = false }: { children: React.ReactNode; isModal?: boolean }) => (
+    <div className={`bg-card rounded-xl overflow-hidden border border-border shadow-2xl ${isModal ? 'w-full max-w-5xl' : ''}`}>
+      {/* Browser top bar */}
+      <div className="bg-secondary/80 px-4 py-2.5 flex items-center gap-3 border-b border-border">
+        <div className="flex gap-2">
+          <Circle className="w-3 h-3 fill-destructive text-destructive" />
+          <Circle className="w-3 h-3 fill-accent text-accent" />
+          <Circle className="w-3 h-3 fill-primary text-primary" />
+        </div>
+        <div className="flex-1 mx-4">
+          <div className="bg-background/60 rounded-md px-3 py-1 text-xs text-muted-foreground font-mono truncate">
+            app.obo.se/hr-dashboard
+          </div>
+        </div>
+      </div>
+      {children}
+    </div>
+  );
+
   return (
     <div
       className={`card-hover bg-card rounded-2xl overflow-hidden border border-border ${
         project.featured ? "md:col-span-2" : ""
       }`}
     >
-      {/* Image Gallery */}
+      {/* Image Gallery with Browser Frame */}
       {hasImages && (
-        <div className="relative group">
-          <div className="aspect-[16/9] max-h-64 overflow-hidden bg-secondary">
-            <img
-              src={project.images![currentImage]}
-              alt={`${project.title} screenshot ${currentImage + 1}`}
-              className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-            />
+        <>
+          <div className="p-4 pb-0">
+            <BrowserFrame>
+              <div 
+                className="relative group cursor-pointer"
+                onClick={() => setLightboxOpen(true)}
+              >
+                <div className="aspect-[16/9] max-h-48 overflow-hidden bg-secondary">
+                  <img
+                    src={project.images![currentImage]}
+                    alt={`${project.title} screenshot ${currentImage + 1}`}
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 transition-colors flex items-center justify-center">
+                  <span className="opacity-0 group-hover:opacity-100 transition-opacity text-sm font-medium bg-background/90 px-3 py-1.5 rounded-full">
+                    Klicka för att expandera
+                  </span>
+                </div>
+                {project.images!.length > 1 && (
+                  <>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); prevImage(); }}
+                      className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-background/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
+                      aria-label="Previous image"
+                    >
+                      <ChevronLeft size={20} />
+                    </button>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); nextImage(); }}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-background/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
+                      aria-label="Next image"
+                    >
+                      <ChevronRight size={20} />
+                    </button>
+                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+                      {project.images!.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={(e) => { e.stopPropagation(); setCurrentImage(idx); }}
+                          className={`w-2 h-2 rounded-full transition-all ${
+                            idx === currentImage ? "bg-accent w-4" : "bg-background/60"
+                          }`}
+                          aria-label={`Go to image ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
+            </BrowserFrame>
           </div>
-          {project.images!.length > 1 && (
-            <>
-              <button
-                onClick={prevImage}
-                className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-background/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
-                aria-label="Previous image"
-              >
-                <ChevronLeft size={20} />
-              </button>
-              <button
-                onClick={nextImage}
-                className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-background/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
-                aria-label="Next image"
-              >
-                <ChevronRight size={20} />
-              </button>
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+
+          {/* Lightbox Modal */}
+          <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
+            <DialogContent className="max-w-6xl w-[95vw] p-6 bg-background/95 backdrop-blur-xl border-border">
+              <BrowserFrame isModal>
+                <div className="relative group">
+                  <div className="max-h-[75vh] overflow-auto">
+                    <img
+                      src={project.images![currentImage]}
+                      alt={`${project.title} screenshot ${currentImage + 1}`}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  {project.images!.length > 1 && (
+                    <>
+                      <button
+                        onClick={prevImage}
+                        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-background/80 backdrop-blur-sm hover:bg-background transition-colors"
+                        aria-label="Previous image"
+                      >
+                        <ChevronLeft size={24} />
+                      </button>
+                      <button
+                        onClick={nextImage}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-background/80 backdrop-blur-sm hover:bg-background transition-colors"
+                        aria-label="Next image"
+                      >
+                        <ChevronRight size={24} />
+                      </button>
+                    </>
+                  )}
+                </div>
+              </BrowserFrame>
+              <div className="flex justify-center gap-2 mt-4">
                 {project.images!.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => setCurrentImage(idx)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      idx === currentImage ? "bg-accent w-4" : "bg-background/60"
+                    className={`w-2.5 h-2.5 rounded-full transition-all ${
+                      idx === currentImage ? "bg-accent w-6" : "bg-muted-foreground/40"
                     }`}
                     aria-label={`Go to image ${idx + 1}`}
                   />
                 ))}
               </div>
-            </>
-          )}
-        </div>
+            </DialogContent>
+          </Dialog>
+        </>
       )}
 
       {/* Project Header */}
