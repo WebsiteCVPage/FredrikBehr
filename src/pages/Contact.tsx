@@ -1,36 +1,8 @@
-import { Mail, Phone, MapPin, Send } from "lucide-react";
-import { useState } from "react";
+import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Meddelande skickat!",
-      description: "Tack för ditt meddelande. Jag återkommer så snart som möjligt.",
-    });
-    setFormData({ name: "", email: "", subject: "", message: "" });
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -47,137 +19,105 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact Cards */}
       <section className="py-20">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 max-w-6xl mx-auto">
-            {/* Contact Info */}
-            <div>
-              <h2 className="font-display text-3xl font-bold text-foreground mb-6">
-                Låt oss prata
-              </h2>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                Jag är alltid öppen för nya möjligheter och spännande projekt. 
-                Oavsett om du har en fråga eller bara vill säga hej, så svarar jag gärna!
-              </p>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-display text-3xl font-bold text-foreground mb-4 text-center">
+              Låt oss prata
+            </h2>
+            <p className="text-muted-foreground mb-12 text-center max-w-xl mx-auto">
+              Jag är alltid öppen för nya möjligheter och spännande projekt. 
+              Välj det sätt som passar dig bäst för att nå mig.
+            </p>
 
-              <div className="space-y-6">
-                <a
-                  href="tel:070-5544518"
-                  className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border card-hover group"
-                >
-                  <div className="p-3 rounded-lg bg-accent/10 group-hover:bg-accent transition-colors">
-                    <Phone className="text-accent group-hover:text-accent-foreground transition-colors" size={20} />
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Phone Card */}
+              <a
+                href="tel:070-5544518"
+                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-accent/10 via-accent/5 to-transparent border border-accent/20 p-8 transition-all duration-500 hover:border-accent/50 hover:shadow-[0_0_40px_-10px_hsl(var(--accent)/0.4)] hover:-translate-y-2"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-3xl transition-all duration-500 group-hover:bg-accent/20 group-hover:scale-150" />
+                
+                <div className="relative">
+                  <div className="w-16 h-16 rounded-2xl bg-accent/20 flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-accent group-hover:scale-110">
+                    <Phone className="w-7 h-7 text-accent group-hover:text-accent-foreground transition-colors" />
                   </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Telefon</p>
-                    <p className="font-medium text-foreground">070-55 44 518</p>
+                  
+                  <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                    Ring mig
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    Snabbaste sättet att nå mig
+                  </p>
+                  
+                  <div className="flex items-center gap-2 text-foreground font-medium">
+                    <span>070-55 44 518</span>
+                    <ExternalLink className="w-4 h-4 opacity-0 -translate-x-2 transition-all group-hover:opacity-100 group-hover:translate-x-0" />
                   </div>
-                </a>
+                </div>
+              </a>
 
-                <a
-                  href="mailto:Fredrik92@hotmail.com"
-                  className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border card-hover group"
-                >
-                  <div className="p-3 rounded-lg bg-accent/10 group-hover:bg-accent transition-colors">
-                    <Mail className="text-accent group-hover:text-accent-foreground transition-colors" size={20} />
+              {/* Email Card */}
+              <a
+                href="mailto:Fredrik92@hotmail.com"
+                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent border border-primary/20 p-8 transition-all duration-500 hover:border-primary/50 hover:shadow-[0_0_40px_-10px_hsl(var(--primary)/0.4)] hover:-translate-y-2"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl transition-all duration-500 group-hover:bg-primary/20 group-hover:scale-150" />
+                
+                <div className="relative">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
+                    <Mail className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
                   </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">E-post</p>
-                    <p className="font-medium text-foreground">Fredrik92@hotmail.com</p>
+                  
+                  <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                    Skicka e-post
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    För längre frågor eller förfrågningar
+                  </p>
+                  
+                  <div className="flex items-center gap-2 text-foreground font-medium">
+                    <span className="truncate">Fredrik92@hotmail.com</span>
+                    <ExternalLink className="w-4 h-4 opacity-0 -translate-x-2 transition-all group-hover:opacity-100 group-hover:translate-x-0 flex-shrink-0" />
                   </div>
-                </a>
+                </div>
+              </a>
 
-                <div className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border">
-                  <div className="p-3 rounded-lg bg-accent/10">
-                    <MapPin className="text-accent" size={20} />
+              {/* Location Card */}
+              <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-secondary via-secondary/50 to-transparent border border-border p-8 transition-all duration-500 hover:border-border/80 hover:shadow-lg hover:-translate-y-2">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-muted/50 rounded-full blur-3xl transition-all duration-500 group-hover:bg-muted group-hover:scale-150" />
+                
+                <div className="relative">
+                  <div className="w-16 h-16 rounded-2xl bg-muted flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-foreground/10 group-hover:scale-110">
+                    <MapPin className="w-7 h-7 text-muted-foreground group-hover:text-foreground transition-colors" />
                   </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Adress</p>
-                    <p className="font-medium text-foreground">718 95, Frövi</p>
+                  
+                  <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                    Baserad i
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    Öppen för distansarbete
+                  </p>
+                  
+                  <div className="text-foreground font-medium">
+                    718 95, Frövi
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Contact Form */}
-            <div className="bg-card rounded-2xl p-8 border border-border shadow-lg">
-              <h3 className="font-display text-2xl font-bold text-foreground mb-6">
-                Skicka ett meddelande
-              </h3>
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                      Namn
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Ditt namn"
-                      required
-                      className="bg-background"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                      E-post
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="din@email.com"
-                      required
-                      className="bg-background"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
-                    Ämne
-                  </label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    placeholder="Vad gäller det?"
-                    required
-                    className="bg-background"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Meddelande
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Ditt meddelande..."
-                    rows={5}
-                    required
-                    className="bg-background resize-none"
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
-                  size="lg"
-                >
-                  <Send size={18} className="mr-2" />
-                  Skicka meddelande
-                </Button>
-              </form>
+            {/* Availability Notice */}
+            <div className="mt-16 text-center">
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-accent/10 border border-accent/20">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
+                </span>
+                <span className="text-foreground font-medium">
+                  Tillgänglig för nya projekt
+                </span>
+              </div>
             </div>
           </div>
         </div>
