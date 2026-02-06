@@ -14,6 +14,13 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "On/Off-boarding System",
+    description:
+      "Ett komplett HR-system för att hantera on-boarding och off-boarding av anställda. Systemet inkluderar en dashboard med realtidsstatistik, anpassningsbara arbetsflöden med stegvisa processer, rollbaserade ansvar och sökfunktion för anställda.",
+    technologies: ["React", "TypeScript", "Supabase", "Tailwind CSS", "PostgreSQL"],
+    featured: true,
+  },
+  {
     title: "Kontaktapplikation",
     description:
       "En fullstack kontakthanteringsapplikation byggd med C# och .NET. Applikationen följer SOLID-principerna och har en hållbar, strukturerad kodbas med Entity Framework för databashantering.",
@@ -25,7 +32,6 @@ const projects: Project[] = [
     description:
       "En projektstyrningsapplikation med MS SQL för databashantering och Entity Framework Core för att koppla samman presentationslagret med affärslogiken och databasen.",
     technologies: ["C#", ".NET", "MS SQL", "Entity Framework Core"],
-    featured: true,
   },
   {
     title: "Responsiv Webbplats",
