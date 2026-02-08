@@ -1,7 +1,15 @@
+import { useState } from "react";
 import { ArrowDown, Mail, Phone, MapPin } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.png";
-
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 const Hero = () => {
+  const [imageOpen, setImageOpen] = useState(false);
+
   return (
     <section className="hero-section min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Decorative elements */}
@@ -14,15 +22,34 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Profile Image */}
           <div className="relative animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            <div className="w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl animate-pulse-glow">
+            <button
+              onClick={() => setImageOpen(true)}
+              className="w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl animate-pulse-glow cursor-pointer hover:scale-105 transition-transform duration-300 focus:outline-none focus:ring-4 focus:ring-accent/50"
+            >
               <img
                 src={profilePhoto}
-                alt="Fredrik Nilsson"
+                alt="Fredrik Nilsson - Klicka för att förstora"
                 className="w-full h-full object-cover object-top"
               />
-            </div>
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent/20 rounded-full blur-2xl" />
+            </button>
+            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent/20 rounded-full blur-2xl pointer-events-none" />
           </div>
+
+          {/* Profile Image Lightbox */}
+          <Dialog open={imageOpen} onOpenChange={setImageOpen}>
+            <DialogContent className="max-w-2xl p-2 bg-card">
+              <VisuallyHidden>
+                <DialogTitle>Profilbild - Fredrik Nilsson</DialogTitle>
+              </VisuallyHidden>
+              <div className="rounded-lg overflow-hidden">
+                <img
+                  src={profilePhoto}
+                  alt="Fredrik Nilsson"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </DialogContent>
+          </Dialog>
 
           {/* Text Content */}
           <div className="text-center lg:text-left text-primary-foreground max-w-2xl">
