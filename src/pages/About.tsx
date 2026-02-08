@@ -43,41 +43,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Trust positions */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-6">
-          <h2 className="font-display text-3xl font-bold text-center text-foreground mb-12">
-            Förtroendeuppdrag
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="card-hover bg-card rounded-xl p-6 border border-border text-center">
-              <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                <Award className="text-accent" size={24} />
-              </div>
-              <h3 className="font-display font-semibold text-foreground mb-2">
-                Förtroendevald Seko
-              </h3>
-            </div>
-            <div className="card-hover bg-card rounded-xl p-6 border border-border text-center">
-              <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                <Shield className="text-accent" size={24} />
-              </div>
-              <h3 className="font-display font-semibold text-foreground mb-2">
-                Skyddsombud
-              </h3>
-            </div>
-            <div className="card-hover bg-card rounded-xl p-6 border border-border text-center">
-              <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                <Users className="text-accent" size={24} />
-              </div>
-              <h3 className="font-display font-semibold text-foreground mb-2">
-                Revisor Seko Örebro
-              </h3>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Personal Letter Section */}
       <section className="py-20 bg-secondary/30">
         <div className="container mx-auto px-6">
@@ -129,7 +94,44 @@ const About = () => {
 
       <Skills />
       <Experience />
+
+            {/* Trust positions */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-6">
+          <h2 className="font-display text-3xl font-bold text-center text-foreground mb-12">
+            Förtroendeuppdrag
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="card-hover bg-card rounded-xl p-6 border border-border text-center">
+              <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
+                <Award className="text-accent" size={24} />
+              </div>
+              <h3 className="font-display font-semibold text-foreground mb-2">
+                Förtroendevald Seko
+              </h3>
+            </div>
+            <div className="card-hover bg-card rounded-xl p-6 border border-border text-center">
+              <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
+                <Shield className="text-accent" size={24} />
+              </div>
+              <h3 className="font-display font-semibold text-foreground mb-2">
+                Skyddsombud
+              </h3>
+            </div>
+            <div className="card-hover bg-card rounded-xl p-6 border border-border text-center">
+              <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
+                <Users className="text-accent" size={24} />
+              </div>
+              <h3 className="font-display font-semibold text-foreground mb-2">
+                Revisor Seko Örebro
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
+
     </div>
   );
 };

@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Code, Database, Monitor, Wrench } from "lucide-react";
 
-const frontendSkills = ["HTML & CSS", "JavaScript", "React"];
-const backendSkills = ["C#", ".NET", "SQL", "Entity Framework", "MS SQL"];
-const toolsSkills = ["Visual Studio Code", "CMS", "Git"];
+const frontendSkills = ["HTML & CSS", "JavaScript", "TypeScript", "React"];
+const backendSkills = ["C#", ".NET", "SQL", "Entity Framework Core", "CMS:Umbraco", "WPF", "XAML"];
+const toolsSkills = ["Visual Studio Code", "Visual Studio", "DevOps", "Github-Projects", "SSMS 2020/2022" , "Git"];
 
 const softSkills = [
   "Ansvarstagande",
