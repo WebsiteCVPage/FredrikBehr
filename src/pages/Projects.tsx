@@ -59,7 +59,7 @@ const projects: Project[] = [
   },
   {
     period: "2024",
-    title: "Interaktiv Webblösning",
+    title: "Interaktiv konsollapplikation",
     course: "JavaScript & React",
     description:
       "Interaktiv webbapplikation med JavaScript och React för att skapa dynamiska och användarvänliga gränssnitt.",
