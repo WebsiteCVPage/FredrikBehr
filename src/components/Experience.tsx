@@ -1,4 +1,5 @@
-import { Briefcase, GraduationCap } from "lucide-react";
+import { Briefcase, GraduationCap, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface TimelineItem {
   period: string;
@@ -59,6 +60,17 @@ const Experience = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Min resa från chaufför till webbutvecklare
           </p>
+        </div>
+
+        {/* Link to full CV */}
+        <div className="text-center mb-12">
+          <Link
+            to="/about"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground rounded-full font-medium hover:bg-accent/90 transition-all hover:shadow-lg hover:-translate-y-0.5 group"
+          >
+            Läs mitt fullständiga CV & personliga brev
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
 
         <div className="max-w-3xl mx-auto relative">
