@@ -1,6 +1,7 @@
 import { ArrowDown, Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import profilePhoto from "@/assets/profile-photo.png";
+import { AvailabilityNotice } from "./AvailabilityNotice";
 
 const Hero = () => {
   return (
@@ -99,7 +100,13 @@ const Hero = () => {
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
           <ArrowDown className="text-primary-foreground/50" size={24} />
         </div>
+      <AvailabilityNotice 
+        variant="light"
+        href="/contact"
+      />
       </div>
+
+
     </section>
   );
 };

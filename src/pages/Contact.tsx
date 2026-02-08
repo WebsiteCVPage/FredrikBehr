@@ -1,7 +1,7 @@
 import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-
+import { AvailabilityNotice } from "@/components/AvailabilityNotice";
 const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -107,18 +107,8 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Availability Notice */}
-            <div className="mt-16 text-center">
-              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-accent/10 border border-accent/20">
-                <span className="relative flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
-                </span>
-                <span className="text-foreground font-medium">
-                  Tillgänglig för nya projekt
-                </span>
-              </div>
-            </div>
+              <AvailabilityNotice />
+
           </div>
         </div>
       </section>
