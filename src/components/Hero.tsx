@@ -2,6 +2,7 @@ import { ArrowDown, Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import profilePhoto from "@/assets/profile-photo.png";
 import { AvailabilityNotice } from "./AvailabilityNotice";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const Hero = () => {
   return (
@@ -16,16 +17,25 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Profile Image - Links to CV/About page */}
           <div className="relative animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            <Link
-              to="/about"
-              className="block w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl animate-pulse-glow cursor-pointer hover:scale-105 transition-transform duration-300 focus:outline-none focus:ring-4 focus:ring-accent/50"
-            >
-              <img
-                src={profilePhoto}
-                alt="Fredrik Nilsson - Klicka för att läsa mitt CV"
-                className="w-full h-full object-cover object-top"
-              />
-            </Link>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    to="/about"
+                    className="block w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl animate-pulse-glow cursor-pointer hover:scale-105 transition-transform duration-300 focus:outline-none focus:ring-4 focus:ring-accent/50"
+                  >
+                    <img
+                      src={profilePhoto}
+                      alt="Fredrik Nilsson - Klicka för att läsa mitt CV"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent side="bottom" className="text-sm">
+                  Läs mitt CV
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent/20 rounded-full blur-2xl pointer-events-none" />
           </div>
 
