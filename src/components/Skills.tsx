@@ -102,8 +102,8 @@ const Skills = () => {
           {/* Backend Skills */}
           <div className="space-y-5">
             <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-lg bg-primary/10">
-                <Database className="w-5 h-5 text-primary" />
+              <div className="p-2.5 rounded-lg bg-accent/10">
+                <Database className="w-5 h-5 text-accent" />
               </div>
               <h3 className="font-display text-lg font-semibold text-foreground">
                 Backend
@@ -116,7 +116,7 @@ const Skills = () => {
                   skill={skill}
                   index={index + frontendSkills.length}
                   isVisible={isVisible}
-                  variant="primary"
+                  variant="accent"
                 />
               ))}
             </div>
@@ -125,8 +125,8 @@ const Skills = () => {
           {/* Tools */}
           <div className="space-y-5">
             <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-lg bg-secondary">
-                <Wrench className="w-5 h-5 text-muted-foreground" />
+              <div className="p-2.5 rounded-lg bg-accent/10">
+                <Wrench className="w-5 h-5 text-accent" />
               </div>
               <h3 className="font-display text-lg font-semibold text-foreground">
                 Verktyg
@@ -139,6 +139,7 @@ const Skills = () => {
                   skill={skill}
                   index={index + frontendSkills.length + backendSkills.length}
                   isVisible={isVisible}
+                  variant="accent"
                 />
               ))}
             </div>
@@ -147,8 +148,8 @@ const Skills = () => {
           {/* Soft Skills & Languages */}
           <div className="space-y-5">
             <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-lg bg-secondary">
-                <Code className="w-5 h-5 text-muted-foreground" />
+              <div className="p-2.5 rounded-lg bg-accent/10">
+                <Code className="w-5 h-5 text-accent" />
               </div>
               <h3 className="font-display text-lg font-semibold text-foreground">
                 Egenskaper
@@ -161,6 +162,7 @@ const Skills = () => {
                   skill={skill}
                   index={index + frontendSkills.length + backendSkills.length + toolsSkills.length}
                   isVisible={isVisible}
+                  variant="accent"
                 />
               ))}
             </div>
