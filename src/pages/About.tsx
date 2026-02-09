@@ -38,6 +38,14 @@ const About = () => {
                   Utöver mina tekniska kunskaper har jag över ett decennium av erfarenhet från PostNord, där jag haft flera ansvarsfulla roller. Denna bakgrund har gett mig värdefulla färdigheter i att ta eget ansvar, hantera kundbemötande samt arbeta strukturerat med planering, problemlösning och effektivisering.
                 </p>
               </div>
+              <a
+                href="/CV_och_PB_Version_2.pdf"
+                download
+                className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-accent text-accent-foreground rounded-full font-medium hover:bg-accent/90 transition-all hover:shadow-lg hover:-translate-y-0.5"
+              >
+                <Download size={18} />
+                Ladda ner CV & Personligt brev
+              </a>
             </div>
           </div>
         </div>
