@@ -8,6 +8,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import onboardingDashboard from "@/assets/onboarding-dashboard.png";
 import onboardingFlows from "@/assets/onboarding-flows.png";
 import onboardingEditor from "@/assets/onboarding-editor.png";
+import demoVideo from "@/assets/silicon-project.mp4";
 
 interface Project {
   period: string;
@@ -19,6 +20,8 @@ interface Project {
   liveUrl?: string;
   githubUrl?: string;
   featured?: boolean;
+  previewVideo?: string;
+  browserUrl?: string; 
 }
 
 const projects: Project[] = [
@@ -31,6 +34,7 @@ const projects: Project[] = [
     technologies: ["React", "TypeScript", "Supabase", "Tailwind CSS", "PostgreSQL"],
     images: [onboardingDashboard, onboardingFlows, onboardingEditor],
     featured: true,
+    browserUrl: "app.obo.se/hr-dashboard",
   },
   {
     period: "2024",
@@ -65,11 +69,36 @@ const projects: Project[] = [
       "Interaktiv webbapplikation med JavaScript och React för att skapa dynamiska och användarvänliga gränssnitt.",
     technologies: ["JavaScript", "React", "CSS", "API Integration"],
   },
-];
+    {
+      period: "2024",
+      title: "Bygga upp hemsida med HTML och CSS",
+      course: "HTML & CSS",
+      description:
+        "Mitt första projekt och inlämningsuppgift där jag återskapade en design från Figma med hjälp av HTML och CSS. Fokus låg på att efterlikna designen så noggrant som möjligt och att lära mig grunderna i webbutveckling, felsökning och versionshantering.",
+      technologies: [
+        "HTML",
+        "CSS",
+        "Visual Studio Code",
+        "Visual Studio",
+        "Inspector tools i webbläsaren",
+        "GitHub (versionshantering)",
+      ],  
+      previewVideo: demoVideo,
+      browserUrl: "figma.com/silicon-template", 
+    },];
 
-const BrowserFrame = ({ children, isModal = false }: { children: React.ReactNode; isModal?: boolean }) => (
-  <div className={`bg-card rounded-xl overflow-hidden border border-border shadow-2xl ${isModal ? 'w-full max-w-5xl' : ''}`}>
-    {/* Browser top bar */}
+
+
+const BrowserFrame = ({
+  children,
+  url,
+  isModal = false,
+}: {
+  children: React.ReactNode;
+  url?: string;
+  isModal?: boolean;
+}) => (
+  <div className={`bg-card rounded-xl overflow-hidden border border-border shadow-2xl ${isModal ? "w-full max-w-5xl" : ""}`}>
     <div className="bg-secondary/80 px-4 py-2.5 flex items-center gap-3 border-b border-border">
       <div className="flex gap-2">
         <Circle className="w-3 h-3 fill-destructive text-destructive" />
@@ -78,7 +107,7 @@ const BrowserFrame = ({ children, isModal = false }: { children: React.ReactNode
       </div>
       <div className="flex-1 mx-4">
         <div className="bg-background/60 rounded-md px-3 py-1 text-xs text-muted-foreground font-mono truncate">
-          app.obo.se/hr-dashboard
+          {url || " "}
         </div>
       </div>
     </div>
@@ -89,6 +118,7 @@ const BrowserFrame = ({ children, isModal = false }: { children: React.ReactNode
 const ProjectTimelineItem = ({ project, index }: { project: Project; index: number }) => {
   const [currentImage, setCurrentImage] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  
   const hasImages = project.images && project.images.length > 0;
 
   const nextImage = () => {
@@ -166,12 +196,26 @@ const ProjectTimelineItem = ({ project, index }: { project: Project; index: numb
             </span>
           ))}
         </div>
-
+          {project.previewVideo && (
+            <div className="mt-4">
+              <BrowserFrame url={project.browserUrl}>
+                <div className="aspect-[16/9] bg-secondary">
+                  <video
+                    src={project.previewVideo}
+                    controls
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </BrowserFrame>
+            </div>
+          )}
         {/* Image Gallery with Browser Frame */}
         {hasImages && (
           <>
             <div className="mt-4">
-              <BrowserFrame>
+              <BrowserFrame url={project.browserUrl}>
                 <div 
                   className="relative group/image cursor-pointer"
                   onClick={() => setLightboxOpen(true)}
