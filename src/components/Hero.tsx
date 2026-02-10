@@ -51,7 +51,7 @@ const Hero = () => {
               className="font-display text-5xl lg:text-7xl font-bold mb-4 animate-fade-in-up"
               style={{ animationDelay: "0.4s" }}
             >
-              Fredrik Nilsson
+              Fredrik Behr
             </h1>
             <p
               className="text-xl lg:text-2xl text-primary-foreground/80 mb-8 font-light animate-fade-in-up"
