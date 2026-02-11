@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
+import { NavLink } from "./NavLink";
 
 const Footer = () => {
   return (
@@ -44,18 +45,18 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold mb-4">Snabblänkar</h4>
             <nav className="space-y-3 text-sm text-primary-foreground/70">
-              <a href="/" className="block hover:text-accent transition-colors">
+              <NavLink to="/" className="block hover:text-accent transition-colors">
                 Hem
-              </a>
-              <a href="/projects" className="block hover:text-accent transition-colors">
+              </NavLink>
+              <NavLink to="/projects" className="block hover:text-accent transition-colors">
                 Projekt
-              </a>
-              <a href="/about" className="block hover:text-accent transition-colors">
+              </NavLink>
+              <NavLink to="/about" className="block hover:text-accent transition-colors">
                 Om mig
-              </a>
-              <a href="/contact" className="block hover:text-accent transition-colors">
+              </NavLink>
+              <NavLink to="/contact" className="block hover:text-accent transition-colors">
                 Kontakt
-              </a>
+              </NavLink>
             </nav>
           </div>
         </div>
