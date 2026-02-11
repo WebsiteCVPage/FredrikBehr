@@ -1,5 +1,5 @@
 import { ArrowDown, Mail, Phone, MapPin } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import profilePhoto from "@/assets/profile-photo.png";
 import { AvailabilityNotice } from "./AvailabilityNotice";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
@@ -90,18 +90,18 @@ const Hero = () => {
               className="mt-10 flex flex-wrap justify-center lg:justify-start gap-4 animate-fade-in-up"
               style={{ animationDelay: "0.7s" }}
             >
-              <a
-                href="/projects"
+              <NavLink
+                to="/projects"
                 className="px-8 py-3 bg-accent text-accent-foreground rounded-full font-medium hover:bg-accent/90 transition-all hover:shadow-lg hover:-translate-y-0.5"
               >
                 Se mina projekt
-              </a>
-              <a
-                href="/contact"
+              </NavLink>
+              <NavLink
+                to="/contact"
                 className="px-8 py-3 border border-primary-foreground/30 text-primary-foreground rounded-full font-medium hover:bg-primary-foreground/10 transition-all"
               >
                 Kontakta mig
-              </a>
+              </NavLink>
             </div>
           </div>
         </div>
