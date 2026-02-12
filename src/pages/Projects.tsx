@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 // Import project images
-import onboardingDashboard from "@/assets/onboarding-dashboard.png";
+import onboardingDashboard from "@/assets/Skärmbild 2026-02-12 082857.png";
 import onboardingFlows from "@/assets/onboarding-flows.png";
 import onboardingEditor from "@/assets/onboarding-editor.png";
 import demoVideo from "@/assets/silicon-project.mp4";
