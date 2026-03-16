@@ -2,7 +2,12 @@ import { ArrowDown, Mail, Phone, MapPin } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 import profilePhoto from "@/assets/profile-photo.png";
 import { AvailabilityNotice } from "./AvailabilityNotice";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const Hero = () => {
   return (
@@ -16,7 +21,10 @@ const Hero = () => {
       <div className="container mx-auto px-6 py-24 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Profile Image - Links to CV/About page */}
-          <div className="relative animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+          <div
+            className="relative animate-fade-in-up"
+            style={{ animationDelay: "0.2s" }}
+          >
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -57,7 +65,8 @@ const Hero = () => {
               className="text-xl lg:text-2xl text-primary-foreground/80 mb-8 font-light animate-fade-in-up"
               style={{ animationDelay: "0.5s" }}
             >
-              Studerande inom <span className="text-accent font-medium">Webbutveckling</span>
+              Studerande inom{" "}
+              <span className="text-accent font-medium">Webbutveckling</span>
             </p>
 
             {/* Contact Info */}
@@ -77,7 +86,7 @@ const Hero = () => {
                 className="flex items-center gap-2 hover:text-accent transition-colors"
               >
                 <Mail size={16} />
-                Fredrik92@hotmail.com
+                Freedrik92@hotmail.com
               </a>
               <span className="flex items-center gap-2">
                 <MapPin size={16} />
@@ -110,13 +119,8 @@ const Hero = () => {
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
           <ArrowDown className="text-primary-foreground/50" size={24} />
         </div>
-      <AvailabilityNotice 
-        variant="light"
-        href="/contact"
-      />
+        <AvailabilityNotice variant="light" href="/contact" />
       </div>
-
-
     </section>
   );
 };

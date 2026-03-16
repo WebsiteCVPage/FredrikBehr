@@ -32,20 +32,27 @@ const About = () => {
               </h1>
               <div className="space-y-4 text-primary-foreground/80 leading-relaxed">
                 <p>
-                  Jag har alltid haft ett stort intresse för datorer och valde därför att studera IT-programmet med inriktning på programmering vid John Bauer-gymnasiet mellan 2008 och 2011.
+                  Jag har alltid haft ett stort intresse för datorer och valde
+                  därför att studera IT-programmet med inriktning på
+                  programmering vid John Bauer-gymnasiet mellan 2008 och 2011.
                 </p>
                 <p>
-                  Utöver mina tekniska kunskaper har jag över ett decennium av erfarenhet från PostNord, där jag haft flera ansvarsfulla roller. Denna bakgrund har gett mig värdefulla färdigheter i att ta eget ansvar, hantera kundbemötande samt arbeta strukturerat med planering, problemlösning och effektivisering.
+                  Utöver mina tekniska kunskaper har jag över ett decennium av
+                  erfarenhet från PostNord, där jag haft flera ansvarsfulla
+                  roller. Denna bakgrund har gett mig värdefulla färdigheter i
+                  att ta eget ansvar, hantera kundbemötande samt arbeta
+                  strukturerat med planering, problemlösning och
+                  effektivisering.
                 </p>
               </div>
-              <a
+              {/* <a
                 href="/CV_och_PB_Version_2.pdf"
                 download
                 className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-accent text-accent-foreground rounded-full font-medium hover:bg-accent/90 transition-all hover:shadow-lg hover:-translate-y-0.5"
               >
                 <Download size={18} />
                 Ladda ner CV & Personligt brev
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
@@ -64,34 +71,78 @@ const About = () => {
                   <strong className="text-foreground">Hej!</strong>
                 </p>
                 <p>
-                  Mitt namn är Fredrik Nilsson och jag studerar webbutveckling inom .NET. Jag söker en tjänst där jag kan använda mina kunskaper och fortsätta utvecklas som utvecklare.
+                  Mitt namn är Fredrik Nilsson och jag studerar webbutveckling
+                  inom .NET. Jag söker en tjänst där jag kan använda mina
+                  kunskaper och fortsätta utvecklas som utvecklare.
                 </p>
-                
+
                 <h3 className="font-display text-xl font-semibold text-foreground mt-8 mb-4">
                   Utbildning och teknisk erfarenhet
                 </h3>
                 <p>
-                  Under utbildningen har jag utvecklat en bred teknisk kompetens inom både <strong className="text-foreground">frontend</strong> och <strong className="text-foreground">backend</strong>. Jag har byggt grunden för webbplatser i <strong className="text-foreground">Visual Studio Code</strong> med <strong className="text-foreground">HTML</strong> och <strong className="text-foreground">CSS</strong>, samt designat responsiva och stilrena gränssnitt. För att skapa interaktiva webblösningar har jag arbetat med <strong className="text-foreground">JavaScript</strong> och <strong className="text-foreground">React</strong>.
+                  Under utbildningen har jag utvecklat en bred teknisk kompetens
+                  inom både{" "}
+                  <strong className="text-foreground">frontend</strong> och{" "}
+                  <strong className="text-foreground">backend</strong>. Jag har
+                  byggt grunden för webbplatser i{" "}
+                  <strong className="text-foreground">
+                    Visual Studio Code
+                  </strong>{" "}
+                  med <strong className="text-foreground">HTML</strong> och{" "}
+                  <strong className="text-foreground">CSS</strong>, samt
+                  designat responsiva och stilrena gränssnitt. För att skapa
+                  interaktiva webblösningar har jag arbetat med{" "}
+                  <strong className="text-foreground">JavaScript</strong> och{" "}
+                  <strong className="text-foreground">React</strong>.
                 </p>
                 <p>
-                  På backend-sidan har jag fördjupat mig i <strong className="text-foreground">C#</strong> och SOLID-principerna genom att utveckla en backend-lösning för en kontaktapplikation, med fokus på hållbar och strukturerad kod. Jag har även byggt en grafisk applikation med <strong className="text-foreground">WPF</strong> och skrivit <strong className="text-foreground">XAML</strong>-kod för gränssnitt.
+                  På backend-sidan har jag fördjupat mig i{" "}
+                  <strong className="text-foreground">C#</strong> och
+                  SOLID-principerna genom att utveckla en backend-lösning för en
+                  kontaktapplikation, med fokus på hållbar och strukturerad kod.
+                  Jag har även byggt en grafisk applikation med{" "}
+                  <strong className="text-foreground">WPF</strong> och skrivit{" "}
+                  <strong className="text-foreground">XAML</strong>-kod för
+                  gränssnitt.
                 </p>
                 <p>
-                  För att hantera datalagring har jag lärt mig grunderna i <strong className="text-foreground">SQL</strong>, inklusive hur man skapar Entity-Relation-diagram för att visualisera databasens struktur. Vidare har jag utvecklat en projektstyrningsapplikation där jag använt <strong className="text-foreground">MS SQL</strong> för databashantering och <strong className="text-foreground">Entity Framework Core</strong> för att koppla samman presentationslagret med affärslogiken och databasen.
+                  För att hantera datalagring har jag lärt mig grunderna i{" "}
+                  <strong className="text-foreground">SQL</strong>, inklusive
+                  hur man skapar Entity-Relation-diagram för att visualisera
+                  databasens struktur. Vidare har jag utvecklat en
+                  projektstyrningsapplikation där jag använt{" "}
+                  <strong className="text-foreground">MS SQL</strong> för
+                  databashantering och{" "}
+                  <strong className="text-foreground">
+                    Entity Framework Core
+                  </strong>{" "}
+                  för att koppla samman presentationslagret med affärslogiken
+                  och databasen.
                 </p>
 
                 <h3 className="font-display text-xl font-semibold text-foreground mt-8 mb-4">
                   Bakgrund och personliga egenskaper
                 </h3>
                 <p>
-                  Jag har alltid haft ett stort intresse för datorer och valde därför att studera IT-programmet med inriktning på programmering vid John Bauer-gymnasiet mellan 2008 och 2011. Utöver mina tekniska kunskaper har jag över ett decennium av erfarenhet från PostNord, där jag haft flera ansvarsfulla roller. Denna bakgrund har gett mig värdefulla färdigheter i att ta eget ansvar, hantera kundbemötande samt arbeta strukturerat med planering, problemlösning och effektivisering.
+                  Jag har alltid haft ett stort intresse för datorer och valde
+                  därför att studera IT-programmet med inriktning på
+                  programmering vid John Bauer-gymnasiet mellan 2008 och 2011.
+                  Utöver mina tekniska kunskaper har jag över ett decennium av
+                  erfarenhet från PostNord, där jag haft flera ansvarsfulla
+                  roller. Denna bakgrund har gett mig värdefulla färdigheter i
+                  att ta eget ansvar, hantera kundbemötande samt arbeta
+                  strukturerat med planering, problemlösning och
+                  effektivisering.
                 </p>
 
                 <p className="mt-8 text-foreground">
-                  Tack för att ni tog er tid att läsa min ansökan. Jag ser fram emot möjligheten att diskutera hur jag kan bidra till ert team. Tveka inte att höra av er om ni har några frågor.
+                  Tack för att ni tog er tid att läsa min ansökan. Jag ser fram
+                  emot möjligheten att diskutera hur jag kan bidra till ert
+                  team. Tveka inte att höra av er om ni har några frågor.
                 </p>
                 <p className="text-foreground">
-                  Väl mött,<br />
+                  Väl mött,
+                  <br />
                   <strong>Fredrik Nilsson</strong>
                 </p>
               </div>
@@ -103,7 +154,7 @@ const About = () => {
       <Skills />
       <Experience />
 
-            {/* Trust positions */}
+      {/* Trust positions */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-6">
           <h2 className="font-display text-3xl font-bold text-center text-foreground mb-12">
@@ -139,7 +190,6 @@ const About = () => {
       </section>
 
       <Footer />
-
     </div>
   );
 };
