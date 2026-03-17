@@ -17,6 +17,9 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import onboardingDashboard from "@/assets/Skärmbild 2026-02-12 082857.png";
 import onboardingFlows from "@/assets/onboarding-flows.png";
 import onboardingEditor from "@/assets/onboarding-editor.png";
+import contactApp1 from "@/assets/kontaktapplikationimg/Skärmbild 2026-03-17 205457.png";
+import contactApp2 from "@/assets/kontaktapplikationimg/Skärmbild 2026-03-17 205635.png";
+import contactApp3 from "@/assets/kontaktapplikationimg/Skärmbild 2026-03-17 205640.png";
 import demoVideo from "@/assets/silicon-project.mp4";
 import { NavLink } from "react-router-dom";
 
@@ -51,33 +54,10 @@ const projects: Project[] = [
     title: "Kontaktapplikation",
     course: "C# & .NET",
     description:
-      "En fullstack kontakthanteringsapplikation byggd med C# och .NET. Applikationen följer SOLID-principerna och har en hållbar, strukturerad kodbas med Entity Framework för databashantering.",
-    technologies: ["C#", ".NET", "Entity Framework", "SQL Server", "WPF"],
+      "En fullstack kontakthanteringsapplikation byggd med C# och .NET. Applikationen följer SOLID-principerna. Den är i grunden byggd som en konsollapplikation och har sedan utökats med WPF som GUI",
+    technologies: ["C#", ".NET", "WPF", "console application"],
+    images: [contactApp1, contactApp2, contactApp3],
     featured: true,
-  },
-  {
-    period: "2024",
-    title: "Projektstyrningsapplikation",
-    course: "Databaser & SQL",
-    description:
-      "En projektstyrningsapplikation med MS SQL för databashantering och Entity Framework Core för att koppla samman presentationslagret med affärslogiken och databasen.",
-    technologies: ["C#", ".NET", "MS SQL", "Entity Framework Core"],
-  },
-  {
-    period: "2024",
-    title: "Responsiv Webbplats",
-    course: "HTML & CSS",
-    description:
-      "Modern och responsiv webbplats byggd med HTML, CSS och JavaScript. Fokus på användarvänlighet och stilrena gränssnitt som fungerar på alla enheter.",
-    technologies: ["HTML", "CSS", "JavaScript", "React"],
-  },
-  {
-    period: "2024",
-    title: "Interaktiv konsollapplikation",
-    course: "JavaScript & React",
-    description:
-      "Interaktiv webbapplikation med JavaScript och React för att skapa dynamiska och användarvänliga gränssnitt.",
-    technologies: ["JavaScript", "React", "CSS", "API Integration"],
   },
   {
     period: "2024",
