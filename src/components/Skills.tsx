@@ -2,8 +2,23 @@ import { useEffect, useRef, useState } from "react";
 import { Code, Database, Monitor, Wrench } from "lucide-react";
 
 const frontendSkills = ["HTML & CSS", "JavaScript", "TypeScript", "React"];
-const backendSkills = ["C#", ".NET", "SQL", "Entity Framework Core", "CMS:Umbraco", "WPF", "XAML"];
-const toolsSkills = ["Visual Studio Code", "Visual Studio", "DevOps", "Github-Projects", "SSMS 2020/2022" , "Git"];
+const backendSkills = [
+  "C#",
+  ".NET",
+  "SQL",
+  "Entity Framework Core",
+  "CMS:Umbraco",
+  "WPF",
+  "XAML",
+];
+const toolsSkills = [
+  "Visual Studio Code",
+  "Visual Studio",
+  "DevOps",
+  "Github-Projects",
+  "SSMS 2020/2022",
+  "Git",
+];
 
 const softSkills = [
   "Ansvarstagande",
@@ -13,14 +28,14 @@ const softSkills = [
   "Teamleading",
 ];
 
-const SkillBadge = ({ 
-  skill, 
-  index, 
-  isVisible, 
-  variant = "default" 
-}: { 
-  skill: string; 
-  index: number; 
+const SkillBadge = ({
+  skill,
+  index,
+  isVisible,
+  variant = "default",
+}: {
+  skill: string;
+  index: number;
   isVisible: boolean;
   variant?: "default" | "accent" | "primary";
 }) => {
@@ -53,7 +68,7 @@ const Skills = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (sectionRef.current) {
@@ -71,11 +86,55 @@ const Skills = () => {
             Färdigheter
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Tekniska kompetenser jag utvecklat genom utbildning och arbetslivserfarenhet
+            Tekniska kompetenser jag utvecklat genom utbildning och
+            arbetslivserfarenhet
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Soft Skills & Languages */}
+          <div className="space-y-5">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 rounded-lg bg-accent/10">
+                <Code className="w-5 h-5 text-accent" />
+              </div>
+              <h3 className="font-display text-lg font-semibold text-foreground">
+                Egenskaper
+              </h3>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {softSkills.map((skill, index) => (
+                <SkillBadge
+                  key={skill}
+                  skill={skill}
+                  index={
+                    index +
+                    frontendSkills.length +
+                    backendSkills.length +
+                    toolsSkills.length
+                  }
+                  isVisible={isVisible}
+                  variant="accent"
+                />
+              ))}
+            </div>
+
+            {/* Languages */}
+            <div className="pt-4 border-t border-border">
+              <h4 className="text-sm font-medium text-muted-foreground mb-3">
+                Språk
+              </h4>
+              <div className="flex gap-2">
+                <span className="px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium">
+                  Svenska
+                </span>
+                <span className="px-4 py-2 bg-secondary text-secondary-foreground rounded-lg text-sm font-medium">
+                  Engelska
+                </span>
+              </div>
+            </div>
+          </div>
+
           {/* Frontend Skills */}
           <div className="space-y-5">
             <div className="flex items-center gap-3">
@@ -142,42 +201,6 @@ const Skills = () => {
                   variant="accent"
                 />
               ))}
-            </div>
-          </div>
-
-          {/* Soft Skills & Languages */}
-          <div className="space-y-5">
-            <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-lg bg-accent/10">
-                <Code className="w-5 h-5 text-accent" />
-              </div>
-              <h3 className="font-display text-lg font-semibold text-foreground">
-                Egenskaper
-              </h3>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {softSkills.map((skill, index) => (
-                <SkillBadge
-                  key={skill}
-                  skill={skill}
-                  index={index + frontendSkills.length + backendSkills.length + toolsSkills.length}
-                  isVisible={isVisible}
-                  variant="accent"
-                />
-              ))}
-            </div>
-
-            {/* Languages */}
-            <div className="pt-4 border-t border-border">
-              <h4 className="text-sm font-medium text-muted-foreground mb-3">Språk</h4>
-              <div className="flex gap-2">
-                <span className="px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium">
-                  Svenska
-                </span>
-                <span className="px-4 py-2 bg-secondary text-secondary-foreground rounded-lg text-sm font-medium">
-                  Engelska
-                </span>
-              </div>
             </div>
           </div>
         </div>

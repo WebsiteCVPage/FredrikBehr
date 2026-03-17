@@ -25,8 +25,8 @@ const Navigation = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md py-3 shadow-md border-b border-border"
-          : "bg-background/40 backdrop-blur-sm py-5"
+          ? "bg-background/5 backdrop-blur-md py-3 shadow-md border-b border-border"
+          : "bg-background/70 backdrop-blur-sm py-5"
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
@@ -44,7 +44,7 @@ const Navigation = () => {
               key={item.to}
               to={item.to}
               className="nav-link text-sm font-medium text-foreground/80 hover:text-foreground transition-colors py-2"
-              activeClassName="text-foreground active"
+              activeClassName="text-accent active"
               end={item.to === "/"}
             >
               {item.label}
