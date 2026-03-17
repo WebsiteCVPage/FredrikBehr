@@ -152,7 +152,7 @@ const About = () => {
       </section>
 
       <Skills />
-      <Experience />
+      <Experience showLink={false} />
 
       {/* Trust positions */}
       <section className="py-16 bg-background">

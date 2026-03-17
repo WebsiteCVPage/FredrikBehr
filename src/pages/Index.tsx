@@ -10,7 +10,7 @@ const Index = () => {
       <Navigation />
       <Hero />
       <Skills />
-      <Experience />
+      <Experience showLink={true} />
       <Footer />
     </div>
   );

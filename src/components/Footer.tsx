@@ -12,7 +12,8 @@ const Footer = () => {
               Fredrik<span className="text-accent">.</span>
             </h3>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
-              Webbutvecklare med passion för att skapa användarvänliga och effektiva digitala lösningar.
+              Webbutvecklare med passion för att skapa användarvänliga och
+              effektiva digitala lösningar.
             </p>
           </div>
 
@@ -32,7 +33,7 @@ const Footer = () => {
                 className="flex items-center gap-3 hover:text-accent transition-colors"
               >
                 <Mail size={16} />
-                Fredrik92@hotmail.com
+                Freedrik92@hotmail.com
               </a>
               <span className="flex items-center gap-3">
                 <MapPin size={16} />
@@ -45,16 +46,28 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold mb-4">Snabblänkar</h4>
             <nav className="space-y-3 text-sm text-primary-foreground/70">
-              <NavLink to="/" className="block hover:text-accent transition-colors">
+              <NavLink
+                to="/"
+                className="block hover:text-accent transition-colors"
+              >
                 Hem
               </NavLink>
-              <NavLink to="/projects" className="block hover:text-accent transition-colors">
+              <NavLink
+                to="/projects"
+                className="block hover:text-accent transition-colors"
+              >
                 Projekt
               </NavLink>
-              <NavLink to="/about" className="block hover:text-accent transition-colors">
+              <NavLink
+                to="/about"
+                className="block hover:text-accent transition-colors"
+              >
                 Om mig
               </NavLink>
-              <NavLink to="/contact" className="block hover:text-accent transition-colors">
+              <NavLink
+                to="/contact"
+                className="block hover:text-accent transition-colors"
+              >
                 Kontakt
               </NavLink>
             </nav>
@@ -63,7 +76,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-primary-foreground/50">
-            © {new Date().getFullYear()} Fredrik Nilsson. Alla rättigheter förbehållna.
+            © {new Date().getFullYear()} Fredrik Nilsson.
           </p>
           <div className="flex gap-4">
             <a

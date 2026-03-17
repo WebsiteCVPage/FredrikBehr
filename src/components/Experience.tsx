@@ -50,7 +50,7 @@ const experiences: TimelineItem[] = [
   },
 ];
 
-const Experience = () => {
+const Experience = ({ showLink = true }) => {
   const [page, setPage] = useState(0);
   const [showAll, setShowAll] = useState(false);
 
@@ -66,7 +66,7 @@ const Experience = () => {
           </p>
         </div>
 
-        {/* Link to full CV */}
+        {showLink && (
         <div className="text-center mb-12">
           <Link
             to="/about"
@@ -79,6 +79,7 @@ const Experience = () => {
             />
           </Link>
         </div>
+        )}
 
         <div className="max-w-3xl mx-auto relative">
           {/* Timeline line */}

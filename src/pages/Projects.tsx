@@ -1,4 +1,13 @@
-import { ExternalLink, Github, Code2, Layers, ChevronLeft, ChevronRight, Circle, FolderOpen } from "lucide-react";
+import {
+  ExternalLink,
+  Github,
+  Code2,
+  Layers,
+  ChevronLeft,
+  ChevronRight,
+  Circle,
+  FolderOpen,
+} from "lucide-react";
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -9,6 +18,7 @@ import onboardingDashboard from "@/assets/Skärmbild 2026-02-12 082857.png";
 import onboardingFlows from "@/assets/onboarding-flows.png";
 import onboardingEditor from "@/assets/onboarding-editor.png";
 import demoVideo from "@/assets/silicon-project.mp4";
+import { NavLink } from "react-router-dom";
 
 interface Project {
   period: string;
@@ -21,7 +31,7 @@ interface Project {
   githubUrl?: string;
   featured?: boolean;
   previewVideo?: string;
-  browserUrl?: string; 
+  browserUrl?: string;
 }
 
 const projects: Project[] = [
@@ -31,7 +41,7 @@ const projects: Project[] = [
     course: "Examensarbete",
     description:
       "Ett komplett HR-system för att hantera on-boarding och off-boarding av anställda. Systemet inkluderar en dashboard med realtidsstatistik, anpassningsbara arbetsflöden med stegvisa processer, rollbaserade ansvar och sökfunktion för anställda.",
-    technologies: ["React", "TypeScript", "Supabase", "Tailwind CSS", "PostgreSQL"],
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Azure SQL"],
     images: [onboardingDashboard, onboardingFlows, onboardingEditor],
     featured: true,
     browserUrl: "app.obo.se/hr-dashboard",
@@ -69,25 +79,24 @@ const projects: Project[] = [
       "Interaktiv webbapplikation med JavaScript och React för att skapa dynamiska och användarvänliga gränssnitt.",
     technologies: ["JavaScript", "React", "CSS", "API Integration"],
   },
-    {
-      period: "2024",
-      title: "Bygga upp hemsida med HTML och CSS",
-      course: "HTML & CSS",
-      description:
-        "Mitt första projekt och inlämningsuppgift där jag återskapade en design från Figma med hjälp av HTML och CSS. Fokus låg på att efterlikna designen så noggrant som möjligt och att lära mig grunderna i webbutveckling, felsökning och versionshantering.",
-      technologies: [
-        "HTML",
-        "CSS",
-        "Visual Studio Code",
-        "Visual Studio",
-        "Inspector tools i webbläsaren",
-        "GitHub (versionshantering)",
-      ],  
-      previewVideo: demoVideo,
-      browserUrl: "figma.com/silicon-template", 
-    },];
-
-
+  {
+    period: "2024",
+    title: "Bygga upp hemsida med HTML och CSS",
+    course: "HTML & CSS",
+    description:
+      "Mitt första projekt och inlämningsuppgift där jag återskapade en design från Figma med hjälp av HTML och CSS. Fokus låg på att efterlikna designen så noggrant som möjligt och att lära mig grunderna i webbutveckling, felsökning och versionshantering.",
+    technologies: [
+      "HTML",
+      "CSS",
+      "Visual Studio Code",
+      "Visual Studio",
+      "Inspector tools i webbläsaren",
+      "GitHub (versionshantering)",
+    ],
+    previewVideo: demoVideo,
+    browserUrl: "figma.com/silicon-template",
+  },
+];
 
 const BrowserFrame = ({
   children,
@@ -98,7 +107,9 @@ const BrowserFrame = ({
   url?: string;
   isModal?: boolean;
 }) => (
-  <div className={`bg-card rounded-xl overflow-hidden border border-border shadow-2xl ${isModal ? "w-full max-w-5xl" : ""}`}>
+  <div
+    className={`bg-card rounded-xl overflow-hidden border border-border shadow-2xl ${isModal ? "w-full max-w-5xl" : ""}`}
+  >
     <div className="bg-secondary/80 px-4 py-2.5 flex items-center gap-3 border-b border-border">
       <div className="flex gap-2">
         <Circle className="w-3 h-3 fill-destructive text-destructive" />
@@ -115,10 +126,16 @@ const BrowserFrame = ({
   </div>
 );
 
-const ProjectTimelineItem = ({ project, index }: { project: Project; index: number }) => {
+const ProjectTimelineItem = ({
+  project,
+  index,
+}: {
+  project: Project;
+  index: number;
+}) => {
   const [currentImage, setCurrentImage] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  
+
   const hasImages = project.images && project.images.length > 0;
 
   const nextImage = () => {
@@ -129,7 +146,9 @@ const ProjectTimelineItem = ({ project, index }: { project: Project; index: numb
 
   const prevImage = () => {
     if (hasImages) {
-      setCurrentImage((prev) => (prev - 1 + project.images!.length) % project.images!.length);
+      setCurrentImage(
+        (prev) => (prev - 1 + project.images!.length) % project.images!.length,
+      );
     }
   };
 
@@ -196,27 +215,27 @@ const ProjectTimelineItem = ({ project, index }: { project: Project; index: numb
             </span>
           ))}
         </div>
-          {project.previewVideo && (
-            <div className="mt-4">
-              <BrowserFrame url={project.browserUrl}>
-                <div className="aspect-[16/9] bg-secondary">
-                  <video
-                    src={project.previewVideo}
-                    controls
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </BrowserFrame>
-            </div>
-          )}
+        {project.previewVideo && (
+          <div className="mt-4">
+            <BrowserFrame url={project.browserUrl}>
+              <div className="aspect-[16/9] bg-secondary">
+                <video
+                  src={project.previewVideo}
+                  controls
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </BrowserFrame>
+          </div>
+        )}
         {/* Image Gallery with Browser Frame */}
         {hasImages && (
           <>
             <div className="mt-4">
               <BrowserFrame url={project.browserUrl}>
-                <div 
+                <div
                   className="relative group/image cursor-pointer"
                   onClick={() => setLightboxOpen(true)}
                 >
@@ -235,14 +254,20 @@ const ProjectTimelineItem = ({ project, index }: { project: Project; index: numb
                   {project.images!.length > 1 && (
                     <>
                       <button
-                        onClick={(e) => { e.stopPropagation(); prevImage(); }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          prevImage();
+                        }}
                         className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-background/80 backdrop-blur-sm opacity-0 group-hover/image:opacity-100 transition-opacity hover:bg-background"
                         aria-label="Previous image"
                       >
                         <ChevronLeft size={20} />
                       </button>
                       <button
-                        onClick={(e) => { e.stopPropagation(); nextImage(); }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          nextImage();
+                        }}
                         className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-background/80 backdrop-blur-sm opacity-0 group-hover/image:opacity-100 transition-opacity hover:bg-background"
                         aria-label="Next image"
                       >
@@ -252,9 +277,14 @@ const ProjectTimelineItem = ({ project, index }: { project: Project; index: numb
                         {project.images!.map((_, idx) => (
                           <button
                             key={idx}
-                            onClick={(e) => { e.stopPropagation(); setCurrentImage(idx); }}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setCurrentImage(idx);
+                            }}
                             className={`w-2 h-2 rounded-full transition-all ${
-                              idx === currentImage ? "bg-accent w-4" : "bg-background/60"
+                              idx === currentImage
+                                ? "bg-accent w-4"
+                                : "bg-background/60"
                             }`}
                             aria-label={`Go to image ${idx + 1}`}
                           />
@@ -304,7 +334,9 @@ const ProjectTimelineItem = ({ project, index }: { project: Project; index: numb
                       key={idx}
                       onClick={() => setCurrentImage(idx)}
                       className={`w-2.5 h-2.5 rounded-full transition-all ${
-                        idx === currentImage ? "bg-accent w-6" : "bg-muted-foreground/40"
+                        idx === currentImage
+                          ? "bg-accent w-6"
+                          : "bg-muted-foreground/40"
                       }`}
                       aria-label={`Go to image ${idx + 1}`}
                     />
@@ -345,7 +377,11 @@ const Projects = () => {
 
             <div className="space-y-8">
               {projects.map((project, index) => (
-                <ProjectTimelineItem key={index} project={project} index={index} />
+                <ProjectTimelineItem
+                  key={index}
+                  project={project}
+                  index={index}
+                />
               ))}
             </div>
           </div>
@@ -361,12 +397,12 @@ const Projects = () => {
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
             Jag är alltid öppen för nya möjligheter och spännande projekt
           </p>
-          <a
-            href="/contact"
+          <NavLink
+            to="/contact"
             className="inline-flex px-8 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-all hover:shadow-lg hover:-translate-y-0.5"
           >
             Kontakta mig
-          </a>
+          </NavLink>
         </div>
       </section>
 
