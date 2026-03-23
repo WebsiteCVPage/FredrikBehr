@@ -40,8 +40,25 @@ interface Project {
 const projects: Project[] = [
   {
     period: "2024",
-    title: "On/Off-boarding System",
+    title: "Examensarbete: kontaktsida MVC",
     course: "Examensarbete",
+    description:
+      "Mitt examensarbete där jag utvecklade en kontaktsida till en elfirma med MVC-arkitektur.",
+    technologies: [
+      "C#",
+      ".NET",
+      "MVC",
+      "Github",
+      "Visual Studio",
+      "Visual Studio Code",
+      "Github-Actions",
+      "Azure static web app",
+    ],
+  },
+  {
+    period: "2024",
+    title: "On/Off-boarding System",
+    course: "LIA - Praktik på OBO",
     description:
       "Ett komplett HR-system för att hantera on-boarding och off-boarding av anställda. Systemet inkluderar en dashboard med realtidsstatistik, anpassningsbara arbetsflöden med stegvisa processer, rollbaserade ansvar och sökfunktion för anställda.",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Azure SQL"],
@@ -52,7 +69,7 @@ const projects: Project[] = [
   {
     period: "2024",
     title: "Kontaktapplikation",
-    course: "C# & .NET",
+    course: "LIA - Praktik på OBO",
     description:
       "En fullstack kontakthanteringsapplikation byggd med C# och .NET. Applikationen följer SOLID-principerna. Den är i grunden byggd som en konsollapplikation och har sedan utökats med WPF som GUI",
     technologies: ["C#", ".NET", "WPF", "console application"],

@@ -48,7 +48,7 @@ const Hero = () => {
           </div>
 
           {/* Text Content */}
-          <div className="text-center lg:text-left text-primary-foreground max-w-2xl">
+          <div className="text-center lg:text-left text-primary-foreground dark:text-white max-w-2xl">
             <p
               className="text-accent font-medium mb-3 animate-fade-in-up"
               style={{ animationDelay: "0.3s" }}
@@ -56,13 +56,13 @@ const Hero = () => {
               Hej, jag heter
             </p>
             <h1
-              className="font-display text-5xl lg:text-7xl font-bold mb-4 animate-fade-in-up"
+              className="font-display text-5xl lg:text-7xl font-bold mb-4  animate-fade-in-up"
               style={{ animationDelay: "0.4s" }}
             >
               Fredrik Behr
             </h1>
             <p
-              className="text-xl lg:text-2xl text-primary-foreground/80 mb-8 font-light animate-fade-in-up"
+              className="text-xl lg:text-2xl text-primary-foreground/80 dark:text-white  mb-8 font-light animate-fade-in-up"
               style={{ animationDelay: "0.5s" }}
             >
               Studerande inom{" "}
@@ -76,19 +76,19 @@ const Hero = () => {
             >
               <a
                 href="tel:070-5544518"
-                className="flex items-center gap-2 hover:text-accent transition-colors"
+                className="flex items-center gap-2 dark:text-white hover:text-accent transition-colors"
               >
                 <Phone size={16} />
                 070-55 44 518
               </a>
               <a
                 href="mailto:Fredrik92@hotmail.com"
-                className="flex items-center gap-2 hover:text-accent transition-colors"
+                className="flex items-center gap-2 dark:text-white hover:text-accent transition-colors"
               >
                 <Mail size={16} />
                 Freedrik92@hotmail.com
               </a>
-              <span className="flex items-center gap-2">
+              <span className="flex items-center gap-2 dark:text-white">
                 <MapPin size={16} />
                 718 95, Frövi
               </span>
@@ -107,7 +107,7 @@ const Hero = () => {
               </NavLink>
               <NavLink
                 to="/contact"
-                className="px-8 py-3 border border-primary-foreground/30 text-primary-foreground rounded-full font-medium hover:bg-primary-foreground/10 transition-all"
+                className="dark:text-accent-foreground dark:bg-accent px-8 py-3 border border-primary-foreground/30 text-primary-foreground rounded-full font-medium hover:bg-primary-foreground/10 transition-all"
               >
                 Kontakta mig
               </NavLink>

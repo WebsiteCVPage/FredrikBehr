@@ -1,16 +1,11 @@
-
 type AvailabilityNoticeProps = {
   text?: string;
   variant?: "dark" | "light";
-  href?: string;
 };
-
 
 export function AvailabilityNotice({
   text = "Tillgänglig för nya projekt",
   variant = "dark",
-  href = "/contact"
-  
 }: AvailabilityNoticeProps) {
   const styles =
     variant === "light"
@@ -26,9 +21,7 @@ export function AvailabilityNotice({
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
           <span className="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
         </span>
-        <span className="font-medium">
-          {text}
-        </span>
+        <span className="font-medium">{text}</span>
       </div>
     </div>
   );
