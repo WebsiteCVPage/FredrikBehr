@@ -20,6 +20,7 @@ import onboardingEditor from "@/assets/onboarding-editor.png";
 import contactApp1 from "@/assets/kontaktapplikationimg/Skärmbild 2026-03-17 205457.png";
 import contactApp2 from "@/assets/kontaktapplikationimg/Skärmbild 2026-03-17 205635.png";
 import contactApp3 from "@/assets/kontaktapplikationimg/Skärmbild 2026-03-17 205640.png";
+import anderssonproject from "@/assets//examensarbete/anderssonprojekt.png";
 import demoVideo from "@/assets/silicon-project.mp4";
 import { NavLink } from "react-router-dom";
 
@@ -54,6 +55,8 @@ const projects: Project[] = [
       "Github-Actions",
       "Azure static web app",
     ],
+    images: [anderssonproject],
+    liveUrl: "https://www.anderssonprojekt.se/",
   },
   {
     period: "2024",
