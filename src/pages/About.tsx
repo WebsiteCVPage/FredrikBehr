@@ -19,7 +19,7 @@ const About = () => {
               <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl">
                 <img
                   src={profilePhoto}
-                  alt="Fredrik Nilsson"
+                  alt="Fredrik Behr"
                   className="w-full h-full object-cover object-top"
                 />
               </div>
@@ -71,7 +71,7 @@ const About = () => {
                   <strong className="text-foreground">Hej!</strong>
                 </p>
                 <p>
-                  Mitt namn är Fredrik Nilsson och jag studerar webbutveckling
+                  Mitt namn är Fredrik Behr och jag studerar webbutveckling
                   inom .NET. Jag söker en tjänst där jag kan använda mina
                   kunskaper och fortsätta utvecklas som utvecklare.
                 </p>
@@ -143,7 +143,7 @@ const About = () => {
                 <p className="text-foreground">
                   Väl mött,
                   <br />
-                  <strong>Fredrik Nilsson</strong>
+                  <strong>Fredrik Behr</strong>
                 </p>
               </div>
             </div>

@@ -34,7 +34,7 @@ const Hero = () => {
                   >
                     <img
                       src={profilePhoto}
-                      alt="Fredrik Nilsson - Klicka för att läsa mitt CV"
+                      alt="Fredrik Behr - Klicka för att läsa mitt CV"
                       className="w-full h-full object-cover object-top"
                     />
                   </Link>
