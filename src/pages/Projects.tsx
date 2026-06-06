@@ -40,7 +40,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    period: "2024",
+    period: "2026",
     title: "Examensarbete: kontaktsida MVC",
     course: "Examensarbete",
     description:
@@ -59,7 +59,7 @@ const projects: Project[] = [
     liveUrl: "https://www.anderssonprojekt.se/",
   },
   {
-    period: "2024",
+    period: "2025-2026",
     title: "On/Off-boarding System",
     course: "LIA - Praktik på OBO",
     description:
