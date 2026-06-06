@@ -76,11 +76,11 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-primary-foreground/50">
-            © {new Date().getFullYear()} Fredrik Nilsson.
+            © {new Date().getFullYear()} Fredrik Behr.
           </p>
           <div className="flex gap-4">
             <a
-              href="https://www.linkedin.com/in/fredrik-nilsson-56192b327/"
+              href="https://www.linkedin.com/in/fredrik-behr-56192b327/"
               className="p-2 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-accent-foreground transition-colors"
               aria-label="LinkedIn"
             >
