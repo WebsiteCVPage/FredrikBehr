@@ -65,8 +65,8 @@ const Hero = () => {
               className="text-xl lg:text-2xl text-primary-foreground/80 dark:text-white  mb-8 font-light animate-fade-in-up"
               style={{ animationDelay: "0.5s" }}
             >
-              Studerande inom{" "}
-              <span className="text-accent font-medium">Webbutveckling</span>
+              Systemutvecklare inom{" "}
+              <span className="text-accent font-medium">.NET</span>
             </p>
 
             {/* Contact Info */}
