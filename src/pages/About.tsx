@@ -37,9 +37,10 @@ const About = () => {
               <div className="space-y-4 text-primary-foreground/80 leading-relaxed">
                 <p>
                   Jag är färdigutbildad .NET-utvecklare med fokus på C#,
-                  React och moderna webbapplikationer. Just nu söker jag en
-                  utvecklarroll där jag kan bidra, lära mig mer och växa
-                  vidare i ett team.
+                  ASP.NET Core, Entity Framework Core, SQL, React och
+                  TypeScript. Just nu söker jag en utvecklarroll där jag får
+                  bidra i ett team, fortsätta växa tekniskt och bygga lösningar
+                  som används på riktigt.
                 </p>
                 <p>
                   Utöver mina tekniska kunskaper har jag över ett decennium av
@@ -78,7 +79,7 @@ const About = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-display text-3xl font-bold text-foreground mb-8 text-center">
-              Personligt brev
+              Professionell profil
             </h2>
             <div className="bg-card rounded-2xl p-8 lg:p-12 border border-border shadow-lg">
               <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed space-y-6">
@@ -89,74 +90,84 @@ const About = () => {
                   Mitt namn är Fredrik Behr och jag är färdigutbildad
                   .NET-utvecklare. Jag söker en utvecklarroll där jag kan
                   använda mina kunskaper, bidra till verkliga lösningar och
-                  fortsätta utvecklas som utvecklare.
+                  fortsätta utvecklas tillsammans med mer erfarna kollegor.
+                </p>
+                <p>
+                  Min väg in i utveckling bygger på både tekniskt intresse och
+                  många års arbetslivserfarenhet. Jag trivs när jag får arbeta
+                  strukturerat, förstå helheten och omsätta idéer till lösningar
+                  som fungerar i praktiken.
                 </p>
 
                 <h3 className="font-display text-xl font-semibold text-foreground mt-8 mb-4">
-                  Utbildning och teknisk erfarenhet
+                  Utveckling i praktiken
                 </h3>
                 <p>
-                  Genom min utbildning och mina egna projekt har jag utvecklat
-                  en bred teknisk kompetens inom både{" "}
-                  <strong className="text-foreground">frontend</strong> och{" "}
-                  <strong className="text-foreground">backend</strong>. Jag har
-                  byggt grunden för webbplatser i{" "}
-                  <strong className="text-foreground">
-                    Visual Studio Code
-                  </strong>{" "}
-                  med <strong className="text-foreground">HTML</strong> och{" "}
-                  <strong className="text-foreground">CSS</strong>, samt
-                  designat responsiva och stilrena gränssnitt. För att skapa
-                  interaktiva webblösningar har jag arbetat med{" "}
-                  <strong className="text-foreground">JavaScript</strong> och{" "}
-                  <strong className="text-foreground">React</strong>.
+                  Under min utbildning har jag arbetat med fullstackutveckling,
+                  men det som framför allt format mig är de praktiska projekten:
+                  LIA, examensarbete och egna lösningar där teknik, struktur
+                  och användarnytta behöver fungera tillsammans.
                 </p>
                 <p>
-                  På backend-sidan har jag fördjupat mig i{" "}
-                  <strong className="text-foreground">C#</strong> och
-                  SOLID-principerna genom att utveckla en backend-lösning för en
-                  kontaktapplikation, med fokus på hållbar och strukturerad kod.
-                  Jag har även byggt en grafisk applikation med{" "}
-                  <strong className="text-foreground">WPF</strong> och skrivit{" "}
-                  <strong className="text-foreground">XAML</strong>-kod för
-                  gränssnitt.
+                  Genom min LIA fick jag erfarenhet av att arbeta i en mer
+                  verklighetsnära utvecklingsmiljö, med samarbete, tekniska
+                  beslut och lösningar som behövde passa in i ett större
+                  sammanhang. I mitt examensarbete utvecklade jag en kontaktsida
+                  med MVC-arkitektur och fokus på en praktisk lösning för en
+                  verklig verksamhet.
                 </p>
                 <p>
-                  För att hantera datalagring har jag lärt mig grunderna i{" "}
-                  <strong className="text-foreground">SQL</strong>, inklusive
-                  hur man skapar Entity-Relation-diagram för att visualisera
-                  databasens struktur. Vidare har jag utvecklat en
-                  projektstyrningsapplikation där jag använt{" "}
-                  <strong className="text-foreground">MS SQL</strong> för
-                  databashantering och{" "}
+                  Efter utbildningen fortsätter jag att utveckla egna projekt
+                  för att fördjupa mina kunskaper, testa tekniska beslut och
+                  visa hur jag arbetar i praktiken. Det hjälper mig att hålla
+                  igång utvecklingen och bygga vidare på det jag lärt mig.
+                </p>
+
+                <h3 className="font-display text-xl font-semibold text-foreground mt-8 mb-4">
+                  Tekniskt fokus idag
+                </h3>
+                <p>
+                  Idag fokuserar jag främst på{" "}
+                  <strong className="text-foreground">C#</strong>,{" "}
+                  <strong className="text-foreground">.NET</strong>,{" "}
+                  <strong className="text-foreground">ASP.NET Core</strong>,{" "}
+                  <strong className="text-foreground">Web API</strong>,{" "}
                   <strong className="text-foreground">
                     Entity Framework Core
                   </strong>{" "}
-                  för att koppla samman presentationslagret med affärslogiken
-                  och databasen. Jag fortsätter även att utveckla egna projekt
-                  för att fördjupa mina kunskaper och visa hur jag arbetar i
-                  praktiken.
+                  och <strong className="text-foreground">SQL</strong> på
+                  backend, tillsammans med{" "}
+                  <strong className="text-foreground">React</strong> och{" "}
+                  <strong className="text-foreground">TypeScript</strong> på
+                  frontend.
+                </p>
+                <p>
+                  Jag använder{" "}
+                  <strong className="text-foreground">Git</strong> och{" "}
+                  <strong className="text-foreground">GitHub</strong> för
+                  versionshantering och har arbetat med{" "}
+                  <strong className="text-foreground">Azure DevOps</strong> och{" "}
+                  <strong className="text-foreground">Azure</strong> i samband
+                  med projekt, leveranser och publicering.
                 </p>
 
                 <h3 className="font-display text-xl font-semibold text-foreground mt-8 mb-4">
-                  Bakgrund och personliga egenskaper
+                  Bakgrund från PostNord
                 </h3>
                 <p>
-                  Jag har alltid haft ett stort intresse för datorer och valde
-                  därför att studera IT-programmet med inriktning på
-                  programmering vid John Bauer-gymnasiet mellan 2008 och 2011.
-                  Utöver mina tekniska kunskaper har jag över ett decennium av
-                  erfarenhet från PostNord, där jag haft flera ansvarsfulla
-                  roller. Denna bakgrund har gett mig värdefulla färdigheter i
-                  att ta eget ansvar, hantera kundbemötande samt arbeta
-                  strukturerat med planering, problemlösning och
-                  effektivisering.
+                  Min bakgrund från PostNord har gett mig en stabil arbetsgrund.
+                  Jag är van vid ansvar, planering, samordning och att lösa
+                  problem i vardagen. Roller som dirigent, fordonsansvarig,
+                  gruppledare och skyddsombud har tränat mig i att kommunicera
+                  tydligt, prioritera och skapa struktur även när
+                  förutsättningarna förändras.
                 </p>
 
                 <p className="mt-8 text-foreground">
-                  Tack för att ni tog er tid att läsa min ansökan. Jag ser fram
-                  emot möjligheten att diskutera hur jag kan bidra till ert
-                  team. Tveka inte att höra av er om ni har några frågor.
+                  Jag ser fram emot möjligheten att ta nästa steg som
+                  utvecklare och bidra med både teknisk nyfikenhet,
+                  ansvarstagande och arbetslivserfarenhet. Tveka inte att höra
+                  av er om ni har några frågor eller vill prata vidare.
                 </p>
                 <p className="text-foreground">
                   Väl mött,
