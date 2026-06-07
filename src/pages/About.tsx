@@ -3,9 +3,13 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
-import profilePhoto from "@/assets/profile-photo.png";
 
 const About = () => {
+  const documentBaseUrl = import.meta.env.BASE_URL;
+  const cvUrl = `${documentBaseUrl}Behr_Fredrik.pdf`;
+  const personalLetterUrl = `${documentBaseUrl}Behr_Fredrik_PB.pdf`;
+  const profilePhotoUrl = `${documentBaseUrl}profile-photo.png?v=behr`;
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -18,7 +22,7 @@ const About = () => {
             <div className="relative">
               <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl">
                 <img
-                  src={profilePhoto}
+                  src={profilePhotoUrl}
                   alt="Fredrik Behr"
                   className="w-full h-full object-cover object-top"
                 />
@@ -32,9 +36,10 @@ const About = () => {
               </h1>
               <div className="space-y-4 text-primary-foreground/80 leading-relaxed">
                 <p>
-                  Jag har alltid haft ett stort intresse för datorer och valde
-                  därför att studera IT-programmet med inriktning på
-                  programmering vid John Bauer-gymnasiet mellan 2008 och 2011.
+                  Jag är färdigutbildad .NET-utvecklare med fokus på C#,
+                  React och moderna webbapplikationer. Just nu söker jag en
+                  utvecklarroll där jag kan bidra, lära mig mer och växa
+                  vidare i ett team.
                 </p>
                 <p>
                   Utöver mina tekniska kunskaper har jag över ett decennium av
@@ -45,14 +50,24 @@ const About = () => {
                   effektivisering.
                 </p>
               </div>
-              {/* <a
-                href="/CV_och_PB_Version_2.pdf"
-                download
-                className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-accent text-accent-foreground rounded-full font-medium hover:bg-accent/90 transition-all hover:shadow-lg hover:-translate-y-0.5"
-              >
-                <Download size={18} />
-                Ladda ner CV & Personligt brev
-              </a> */}
+              <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-4">
+                <a
+                  href={cvUrl}
+                  download
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground rounded-full font-medium hover:bg-accent/90 transition-all hover:shadow-lg hover:-translate-y-0.5"
+                >
+                  <Download size={18} />
+                  Ladda ner CV
+                </a>
+                <a
+                  href={personalLetterUrl}
+                  download
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-primary-foreground/30 text-primary-foreground rounded-full font-medium hover:bg-primary-foreground/10 transition-all"
+                >
+                  <Download size={18} />
+                  Ladda ner personligt brev
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -71,17 +86,18 @@ const About = () => {
                   <strong className="text-foreground">Hej!</strong>
                 </p>
                 <p>
-                  Mitt namn är Fredrik Behr och jag studerar webbutveckling
-                  inom .NET. Jag söker en tjänst där jag kan använda mina
-                  kunskaper och fortsätta utvecklas som utvecklare.
+                  Mitt namn är Fredrik Behr och jag är färdigutbildad
+                  .NET-utvecklare. Jag söker en utvecklarroll där jag kan
+                  använda mina kunskaper, bidra till verkliga lösningar och
+                  fortsätta utvecklas som utvecklare.
                 </p>
 
                 <h3 className="font-display text-xl font-semibold text-foreground mt-8 mb-4">
                   Utbildning och teknisk erfarenhet
                 </h3>
                 <p>
-                  Under utbildningen har jag utvecklat en bred teknisk kompetens
-                  inom både{" "}
+                  Genom min utbildning och mina egna projekt har jag utvecklat
+                  en bred teknisk kompetens inom både{" "}
                   <strong className="text-foreground">frontend</strong> och{" "}
                   <strong className="text-foreground">backend</strong>. Jag har
                   byggt grunden för webbplatser i{" "}
@@ -117,7 +133,9 @@ const About = () => {
                     Entity Framework Core
                   </strong>{" "}
                   för att koppla samman presentationslagret med affärslogiken
-                  och databasen.
+                  och databasen. Jag fortsätter även att utveckla egna projekt
+                  för att fördjupa mina kunskaper och visa hur jag arbetar i
+                  praktiken.
                 </p>
 
                 <h3 className="font-display text-xl font-semibold text-foreground mt-8 mb-4">

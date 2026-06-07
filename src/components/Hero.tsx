@@ -1,6 +1,5 @@
 import { ArrowDown, Mail, Phone, MapPin } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
-import profilePhoto from "@/assets/profile-photo.png";
 import { AvailabilityNotice } from "./AvailabilityNotice";
 import {
   Tooltip,
@@ -10,6 +9,8 @@ import {
 } from "@/components/ui/tooltip";
 
 const Hero = () => {
+  const profilePhotoUrl = `${import.meta.env.BASE_URL}profile-photo.png?v=behr`;
+
   return (
     <section className="hero-section min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Decorative elements */}
@@ -33,7 +34,7 @@ const Hero = () => {
                     className="block w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl animate-pulse-glow cursor-pointer hover:scale-105 transition-transform duration-300 focus:outline-none focus:ring-4 focus:ring-accent/50"
                   >
                     <img
-                      src={profilePhoto}
+                      src={profilePhotoUrl}
                       alt="Fredrik Behr - Klicka för att läsa mitt CV"
                       className="w-full h-full object-cover object-top"
                     />
@@ -65,8 +66,9 @@ const Hero = () => {
               className="text-xl lg:text-2xl text-primary-foreground/80 dark:text-white  mb-8 font-light animate-fade-in-up"
               style={{ animationDelay: "0.5s" }}
             >
-              Systemutvecklare inom{" "}
-              <span className="text-accent font-medium">.NET</span>
+              Färdigutbildad systemutvecklare inom{" "}
+              <span className="text-accent font-medium">.NET</span> som söker
+              utvecklarroll
             </p>
 
             {/* Contact Info */}
@@ -109,7 +111,7 @@ const Hero = () => {
                 to="/contact"
                 className="dark:text-accent-foreground dark:bg-accent px-8 py-3 border border-primary-foreground/30 text-primary-foreground rounded-full font-medium hover:bg-primary-foreground/10 transition-all"
               >
-                Kontakta mig
+                Kontakta mig om jobb
               </NavLink>
             </div>
           </div>

@@ -13,12 +13,12 @@ interface TimelineItem {
 
 const experiences: TimelineItem[] = [
   {
-    period: "2024 – Pågående",
-    title: "Webbutvecklare inom .NET",
+    period: "2024 – 2026",
+    title: ".NET-utvecklare",
     organization: "EC Utbildning",
     location: "Örebro",
     description:
-      "Utbildning i fullstackutveckling med fokus på C# och .NET. Arbetar med praktiska projekt för att tillämpa och repetera kunskaper inom frontend och backend-utveckling.",
+      "Färdigutbildad inom fullstackutveckling med fokus på C# och .NET. Utbildningen innehöll praktiska projekt inom frontend, backend, databaser och moderna utvecklingsflöden.",
     type: "education",
   },
   {
@@ -62,7 +62,7 @@ const Experience = ({ showLink = true }) => {
             Erfarenhet & Utbildning
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Min resa från chaufför till webbutvecklare
+            Min resa från chaufför till färdigutbildad .NET-utvecklare
           </p>
         </div>
 
@@ -72,7 +72,7 @@ const Experience = ({ showLink = true }) => {
             to="/about"
             className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground rounded-full font-medium hover:bg-accent/90 transition-all hover:shadow-lg hover:-translate-y-0.5 group"
           >
-            Läs mitt fullständiga CV & personliga brev
+            Läs mitt CV och personliga brev
             <ArrowRight
               size={18}
               className="group-hover:translate-x-1 transition-transform"

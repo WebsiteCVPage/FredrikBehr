@@ -12,8 +12,8 @@ const Footer = () => {
               Fredrik<span className="text-accent">.</span>
             </h3>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
-              Webbutvecklare med passion för att skapa användarvänliga och
-              effektiva digitala lösningar.
+              Färdigutbildad .NET-utvecklare som söker nästa möjlighet att
+              skapa användarvänliga och effektiva digitala lösningar.
             </p>
           </div>
 

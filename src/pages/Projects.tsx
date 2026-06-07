@@ -44,7 +44,7 @@ const projects: Project[] = [
     title: "Examensarbete: kontaktsida MVC",
     course: "Examensarbete",
     description:
-      "Mitt examensarbete där jag utvecklade en kontaktsida till en elfirma med MVC-arkitektur.",
+      "Ett skarpt examensarbete där jag utvecklade en kontaktsida till en elfirma med MVC-arkitektur, tydlig struktur och fokus på en praktisk lösning för verkliga användare.",
     technologies: [
       "C#",
       ".NET",
@@ -72,9 +72,9 @@ const projects: Project[] = [
   {
     period: "2024",
     title: "Kontaktapplikation",
-    course: "LIA - Praktik på OBO",
+    course: "Eget .NET-projekt",
     description:
-      "En fullstack kontakthanteringsapplikation byggd med C# och .NET. Applikationen följer SOLID-principerna. Den är i grunden byggd som en konsollapplikation och har sedan utökats med WPF som GUI",
+      "En fullstack kontakthanteringsapplikation byggd med C# och .NET. Applikationen följer SOLID-principerna och började som en konsollapplikation som sedan utökades med WPF som grafiskt gränssnitt.",
     technologies: ["C#", ".NET", "WPF", "console application"],
     images: [contactApp1, contactApp2, contactApp3],
     featured: true,
@@ -82,7 +82,7 @@ const projects: Project[] = [
   {
     period: "2024",
     title: "Bygga upp hemsida med HTML och CSS",
-    course: "HTML & CSS",
+    course: "Frontend-projekt",
     description:
       "Mitt första projekt och inlämningsuppgift där jag återskapade en design från Figma med hjälp av HTML och CSS. Fokus låg på att efterlikna designen så noggrant som möjligt och att lära mig grunderna i webbutveckling, felsökning och versionshantering.",
     technologies: [
@@ -363,7 +363,8 @@ const Projects = () => {
             Mina Projekt
           </h1>
           <p className="text-primary-foreground/70 max-w-2xl mx-auto text-lg">
-            En samling av projekt jag har arbetat med under min utbildning
+            Egna projekt, examensarbete och praktiska case som visar hur jag
+            arbetar med frontend, backend och .NET-utveckling
           </p>
         </div>
       </section>
@@ -395,7 +396,8 @@ const Projects = () => {
             Intresserad av att samarbeta?
           </h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            Jag är alltid öppen för nya möjligheter och spännande projekt
+            Jag söker en utvecklarroll och är öppen för nya möjligheter,
+            samarbeten och tekniska utmaningar
           </p>
           <NavLink
             to="/contact"

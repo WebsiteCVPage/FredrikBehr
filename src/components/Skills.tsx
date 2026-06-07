@@ -86,8 +86,8 @@ const Skills = () => {
             Färdigheter
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Tekniska kompetenser jag utvecklat genom utbildning och
-            arbetslivserfarenhet
+            Tekniska kompetenser från utbildning, arbetslivserfarenhet och egna
+            projekt
           </p>
         </div>
 

@@ -14,8 +14,8 @@ const Contact = () => {
             Kontakta mig
           </h1>
           <p className="text-primary-foreground/70 max-w-2xl mx-auto text-lg">
-            Har du ett projekt eller vill bara säga hej? Tveka inte att höra av
-            dig!
+            Har du en utvecklarroll, ett projekt eller vill bara säga hej?
+            Tveka inte att höra av dig!
           </p>
         </div>
       </section>
@@ -28,8 +28,9 @@ const Contact = () => {
               Låt oss prata
             </h2>
             <p className="text-muted-foreground mb-12 text-center max-w-xl mx-auto">
-              Jag är alltid öppen för nya möjligheter och spännande projekt.
-              Välj det sätt som passar dig bäst för att nå mig.
+              Jag söker jobb som .NET-utvecklare och är öppen för nya
+              möjligheter, samarbeten och spännande projekt. Välj det sätt som
+              passar dig bäst för att nå mig.
             </p>
 
             <div className="grid md:grid-cols-3 gap-6">
