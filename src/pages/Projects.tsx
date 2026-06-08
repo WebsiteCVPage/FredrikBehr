@@ -61,7 +61,7 @@ const projects: Project[] = [
   {
     period: "2025-2026",
     title: "On/Off-boarding System",
-    course: "LIA - Praktik på OBO",
+    course: "LIA - Praktik på ÖBO",
     description:
       "Ett komplett HR-system för att hantera on-boarding och off-boarding av anställda. Systemet inkluderar en dashboard med realtidsstatistik, anpassningsbara arbetsflöden med stegvisa processer, rollbaserade ansvar och sökfunktion för anställda.",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Azure SQL"],
@@ -396,7 +396,7 @@ const Projects = () => {
             Intresserad av att samarbeta?
           </h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            Jag söker en utvecklarroll och är öppen för nya möjligheter,
+            Jag söker utvecklarroller och är öppen för nya möjligheter,
             samarbeten och tekniska utmaningar
           </p>
           <NavLink

@@ -18,7 +18,7 @@ const experiences: TimelineItem[] = [
     organization: "ÖrebroBostäder",
     location: "Örebro",
     description:
-      "Arbetar som systemutvecklare med vidareutveckling och förvaltning av interna system som utvecklats inom verksamheten. Dessa system är integerade med interna och externa tjänster, inklusive Microsoft 365, Azure och andra molntjänster. Jag ansvarar för att implementera nya funktioner, optimera prestanda och säkerställa att systemen möter verksamhetens behov.",
+      "Arbetar som systemutvecklare med vidareutveckling och förvaltning av interna system som utvecklats inom verksamheten. Systemen är integrerade med interna och externa tjänster, inklusive Microsoft 365, Azure och andra molntjänster. Jag implementerar nya funktioner, optimerar prestanda och säkerställer att systemen möter verksamhetens behov.",
     type: "work",
   },
   {

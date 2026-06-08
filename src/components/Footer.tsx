@@ -12,7 +12,7 @@ const Footer = () => {
               Fredrik<span className="text-accent">.</span>
             </h3>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
-              Färdigutbildad .NET-utvecklare som söker nästa möjlighet att
+              Färdigutbildad .NET-utvecklare som söker utvecklarroller och vill
               skapa användarvänliga och effektiva digitala lösningar.
             </p>
           </div>

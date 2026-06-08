@@ -38,7 +38,7 @@ const About = () => {
                 <p>
                   Jag är färdigutbildad .NET-utvecklare med fokus på C#, ASP.NET
                   Core, Entity Framework Core, SQL, React och TypeScript. Just
-                  nu söker jag en utvecklarroll där jag får bidra i ett team,
+                  nu söker jag utvecklarroller där jag får bidra i ett team,
                   fortsätta växa tekniskt och bygga lösningar som används på
                   riktigt.
                 </p>
@@ -88,9 +88,11 @@ const About = () => {
                 </p>
                 <p>
                   Mitt namn är Fredrik Behr och jag är färdigutbildad
-                  .NET-utvecklare. Jag söker en utvecklarroll där jag kan
-                  använda mina kunskaper, bidra till verkliga lösningar och
-                  fortsätta utvecklas tillsammans med mer erfarna kollegor.
+                  .NET-utvecklare och arbetar idag med förvaltning och
+                  vidareutveckling av en onboardingapplikation för
+                  ÖrebroBostäder. Samtidigt söker jag utvecklarroller där jag
+                  kan använda mina kunskaper, bidra till verkliga lösningar och
+                  fortsätta utvecklas tillsammans med erfarna kollegor.
                 </p>
                 <p>
                   Min väg in i utveckling bygger på både tekniskt intresse och
@@ -106,14 +108,14 @@ const About = () => {
                   Under utbildningen arbetade jag med fullstackutveckling, men
                   det som framför allt format mig är de praktiska projekten och
                   möjligheten att arbeta med verkliga verksamhetsbehov. Under
-                  min LIA på Örebrobostäder (ÖBO) utvecklade jag tillsammans med
+                  min LIA på ÖrebroBostäder (ÖBO) utvecklade jag tillsammans med
                   mitt team en onboardingapplikation med React i frontend och
                   ASP.NET Web API i backend. Projektet genomfördes i nära
                   samarbete med verksamheten och gav värdefull erfarenhet av
                   både tekniska beslut, samarbete och leveranser i en
                   professionell utvecklingsmiljö. Efter avslutad praktik har jag
-                  fortsatt arbeta med lösningen genom en behovsanställning hos
-                  ÖBO. Där arbetar jag med förvaltning, vidareutveckling och
+                  fortsatt arbeta med lösningen genom en behovsanställning. Där
+                  arbetar jag med förvaltning, vidareutveckling och
                   förbättringar av onboardingapplikationen utifrån verksamhetens
                   behov. Utöver detta fortsätter jag att utveckla egna projekt
                   för att bredda mina kunskaper, utforska nya tekniker och

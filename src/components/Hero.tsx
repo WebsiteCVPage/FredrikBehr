@@ -68,7 +68,7 @@ const Hero = () => {
             >
               Färdigutbildad systemutvecklare inom{" "}
               <span className="text-accent font-medium">.NET</span> som söker
-              utvecklarroll
+              utvecklarroller
             </p>
 
             {/* Contact Info */}
@@ -111,7 +111,7 @@ const Hero = () => {
                 to="/contact"
                 className="dark:text-accent-foreground dark:bg-accent px-8 py-3 border border-primary-foreground/30 text-primary-foreground rounded-full font-medium hover:bg-primary-foreground/10 transition-all"
               >
-                Kontakta mig om jobb
+                Kontakta mig
               </NavLink>
             </div>
           </div>

@@ -28,7 +28,7 @@ const Contact = () => {
               Låt oss prata
             </h2>
             <p className="text-muted-foreground mb-12 text-center max-w-xl mx-auto">
-              Jag söker jobb som .NET-utvecklare och är öppen för nya
+              Jag söker utvecklarroller inom .NET och är öppen för nya
               möjligheter, samarbeten och spännande projekt. Välj det sätt som
               passar dig bäst för att nå mig.
             </p>
