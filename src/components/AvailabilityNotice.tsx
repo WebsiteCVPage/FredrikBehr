@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 type AvailabilityNoticeProps = {
   text?: string;
   href?: string;
@@ -22,20 +24,24 @@ export function AvailabilityNotice({
       <span className="font-medium">{text}</span>
     </>
   );
+  const className = `inline-flex items-center gap-3 px-6 py-3 rounded-full border ${styles}`;
+  const isInternalLink = href?.startsWith("/");
 
   return (
     <div className="mt-16 text-center">
-      {href ? (
+      {href && isInternalLink ? (
+        <Link to={href} className={className}>
+          {content}
+        </Link>
+      ) : href ? (
         <a
           href={href}
-          className={`inline-flex items-center gap-3 px-6 py-3 rounded-full border ${styles}`}
+          className={className}
         >
           {content}
         </a>
       ) : (
-        <div
-          className={`inline-flex items-center gap-3 px-6 py-3 rounded-full border ${styles}`}
-        >
+        <div className={className}>
           {content}
         </div>
       )}
