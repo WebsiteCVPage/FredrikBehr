@@ -13,6 +13,15 @@ interface TimelineItem {
 
 const experiences: TimelineItem[] = [
   {
+    period: "2026 – Pågående",
+    title: "Systemutvecklare",
+    organization: "ÖrebroBostäder",
+    location: "Örebro",
+    description:
+      "Arbetar som systemutvecklare med vidareutveckling och förvaltning av interna system som utvecklats inom verksamheten. Dessa system är integerade med interna och externa tjänster, inklusive Microsoft 365, Azure och andra molntjänster. Jag ansvarar för att implementera nya funktioner, optimera prestanda och säkerställa att systemen möter verksamhetens behov.",
+    type: "work",
+  },
+  {
     period: "2024 – 2026",
     title: ".NET-utvecklare",
     organization: "EC Utbildning",
@@ -62,23 +71,23 @@ const Experience = ({ showLink = true }) => {
             Erfarenhet & Utbildning
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Min resa från chaufför till färdigutbildad .NET-utvecklare
+            Från PostNord till .NET-utveckling
           </p>
         </div>
 
         {showLink && (
-        <div className="text-center mb-12">
-          <Link
-            to="/about"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground rounded-full font-medium hover:bg-accent/90 transition-all hover:shadow-lg hover:-translate-y-0.5 group"
-          >
-            Läs mitt CV och personliga brev
-            <ArrowRight
-              size={18}
-              className="group-hover:translate-x-1 transition-transform"
-            />
-          </Link>
-        </div>
+          <div className="text-center mb-12">
+            <Link
+              to="/about"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground rounded-full font-medium hover:bg-accent/90 transition-all hover:shadow-lg hover:-translate-y-0.5 group"
+            >
+              Läs mitt CV och personliga brev
+              <ArrowRight
+                size={18}
+                className="group-hover:translate-x-1 transition-transform"
+              />
+            </Link>
+          </div>
         )}
 
         <div className="max-w-3xl mx-auto relative">
@@ -86,70 +95,69 @@ const Experience = ({ showLink = true }) => {
           <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border hidden md:block" />
 
           <div className="space-y-8">
-            {(showAll
-              ? experiences
-              : experiences.slice(page, page + 2)
-            ).map((item, index) => {
-              const isPreview = !showAll && index === 1;
+            {(showAll ? experiences : experiences.slice(page, page + 2)).map(
+              (item, index) => {
+                const isPreview = !showAll && index === 1;
 
-              return (
-                <div
-                  key={`${item.period}-${index}`}
-                  className={`relative pl-0 md:pl-20 group transition-opacity duration-500 ${
-                    isPreview ? "opacity-40 scale-[0.97]" : "opacity-100"
-                  }`}
-                >
-                  {/* Timeline dot */}
-                  <div className="hidden md:flex absolute left-5 top-8 w-6 h-6 rounded-full border-4 border-background items-center justify-center bg-accent">
-                    {item.type === "education" ? (
-                      <GraduationCap
-                        size={12}
-                        className="text-accent-foreground"
-                      />
-                    ) : (
-                      <Briefcase
-                        size={12}
-                        className="text-accent-foreground"
-                      />
-                    )}
-                  </div>
-
-                  {/* Card */}
-                  <div className="card-hover bg-card rounded-xl p-6 border border-border">
-                    <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
-                      <div>
-                        <span className="inline-flex items-center gap-2 text-xs font-medium text-accent mb-2">
-                          {item.type === "education" ? (
-                            <>
-                              <GraduationCap size={14} />
-                              Utbildning
-                            </>
-                          ) : (
-                            <>
-                              <Briefcase size={14} />
-                              Arbete
-                            </>
-                          )}
-                        </span>
-                        <h3 className="font-display text-lg font-semibold text-foreground">
-                          {item.title}
-                        </h3>
-                      </div>
-                      <span className="text-sm text-muted-foreground bg-secondary px-3 py-1 rounded-full">
-                        {item.period}
-                      </span>
+                return (
+                  <div
+                    key={`${item.period}-${index}`}
+                    className={`relative pl-0 md:pl-20 group transition-opacity duration-500 ${
+                      isPreview ? "opacity-40 scale-[0.97]" : "opacity-100"
+                    }`}
+                  >
+                    {/* Timeline dot */}
+                    <div className="hidden md:flex absolute left-5 top-8 w-6 h-6 rounded-full border-4 border-background items-center justify-center bg-accent">
+                      {item.type === "education" ? (
+                        <GraduationCap
+                          size={12}
+                          className="text-accent-foreground"
+                        />
+                      ) : (
+                        <Briefcase
+                          size={12}
+                          className="text-accent-foreground"
+                        />
+                      )}
                     </div>
 
-                    <p className="text-sm font-medium text-muted-foreground mb-3">
-                      {item.organization}, {item.location}
-                    </p>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {item.description}
-                    </p>
+                    {/* Card */}
+                    <div className="card-hover bg-card rounded-xl p-6 border border-border">
+                      <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
+                        <div>
+                          <span className="inline-flex items-center gap-2 text-xs font-medium text-accent mb-2">
+                            {item.type === "education" ? (
+                              <>
+                                <GraduationCap size={14} />
+                                Utbildning
+                              </>
+                            ) : (
+                              <>
+                                <Briefcase size={14} />
+                                Arbete
+                              </>
+                            )}
+                          </span>
+                          <h3 className="font-display text-lg font-semibold text-foreground">
+                            {item.title}
+                          </h3>
+                        </div>
+                        <span className="text-sm text-muted-foreground bg-secondary px-3 py-1 rounded-full">
+                          {item.period}
+                        </span>
+                      </div>
+
+                      <p className="text-sm font-medium text-muted-foreground mb-3">
+                        {item.organization}, {item.location}
+                      </p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              },
+            )}
 
             {/* Toggle view */}
             <div className="text-center mt-12">

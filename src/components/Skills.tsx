@@ -1,15 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import { Code, Database, Monitor, Wrench } from "lucide-react";
 
-const frontendSkills = ["HTML & CSS", "JavaScript", "TypeScript", "React"];
+const frontendSkills = [
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "React-Native",
+  "Tailwind CSS",
+];
 const backendSkills = [
   "C#",
   ".NET",
   "SQL",
   "Entity Framework Core",
   "CMS:Umbraco",
-  "WPF",
-  "XAML",
 ];
 const toolsSkills = [
   "Visual Studio Code",

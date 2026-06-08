@@ -103,10 +103,21 @@ const About = () => {
                   Utveckling i praktiken
                 </h3>
                 <p>
-                  Under min utbildning har jag arbetat med fullstackutveckling,
-                  men det som framför allt format mig är de praktiska projekten:
-                  LIA, examensarbete och egna lösningar där teknik, struktur och
-                  användarnytta behöver fungera tillsammans.
+                  Under utbildningen arbetade jag med fullstackutveckling, men
+                  det som framför allt format mig är de praktiska projekten och
+                  möjligheten att arbeta med verkliga verksamhetsbehov. Under
+                  min LIA på Örebrobostäder (ÖBO) utvecklade jag tillsammans med
+                  mitt team en onboardingapplikation med React i frontend och
+                  ASP.NET Web API i backend. Projektet genomfördes i nära
+                  samarbete med verksamheten och gav värdefull erfarenhet av
+                  både tekniska beslut, samarbete och leveranser i en
+                  professionell utvecklingsmiljö. Efter avslutad praktik har jag
+                  fortsatt arbeta med lösningen genom en behovsanställning hos
+                  ÖBO. Där arbetar jag med förvaltning, vidareutveckling och
+                  förbättringar av onboardingapplikationen utifrån verksamhetens
+                  behov. Utöver detta fortsätter jag att utveckla egna projekt
+                  för att bredda mina kunskaper, utforska nya tekniker och
+                  omsätta idéer till fungerande lösningar.
                 </p>
                 <p>
                   Genom min LIA fick jag erfarenhet av att arbeta i en mer
@@ -137,8 +148,10 @@ const About = () => {
                   </strong>{" "}
                   och <strong className="text-foreground">SQL</strong> på
                   backend, tillsammans med{" "}
-                  <strong className="text-foreground">React</strong> och{" "}
-                  <strong className="text-foreground">TypeScript</strong> på
+                  <strong className="text-foreground">
+                    React/React-Native
+                  </strong>{" "}
+                  och <strong className="text-foreground">TypeScript</strong> på
                   frontend.
                 </p>
                 <p>
