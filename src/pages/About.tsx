@@ -36,11 +36,11 @@ const About = () => {
               </h1>
               <div className="space-y-4 text-primary-foreground/80 leading-relaxed">
                 <p>
-                  Jag är färdigutbildad .NET-utvecklare med fokus på C#,
-                  ASP.NET Core, Entity Framework Core, SQL, React och
-                  TypeScript. Just nu söker jag en utvecklarroll där jag får
-                  bidra i ett team, fortsätta växa tekniskt och bygga lösningar
-                  som används på riktigt.
+                  Jag är färdigutbildad .NET-utvecklare med fokus på C#, ASP.NET
+                  Core, Entity Framework Core, SQL, React och TypeScript. Just
+                  nu söker jag en utvecklarroll där jag får bidra i ett team,
+                  fortsätta växa tekniskt och bygga lösningar som används på
+                  riktigt.
                 </p>
                 <p>
                   Utöver mina tekniska kunskaper har jag över ett decennium av
@@ -79,7 +79,7 @@ const About = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-display text-3xl font-bold text-foreground mb-8 text-center">
-              Professionell profil
+              Min resa till utveckling
             </h2>
             <div className="bg-card rounded-2xl p-8 lg:p-12 border border-border shadow-lg">
               <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed space-y-6">
@@ -105,8 +105,8 @@ const About = () => {
                 <p>
                   Under min utbildning har jag arbetat med fullstackutveckling,
                   men det som framför allt format mig är de praktiska projekten:
-                  LIA, examensarbete och egna lösningar där teknik, struktur
-                  och användarnytta behöver fungera tillsammans.
+                  LIA, examensarbete och egna lösningar där teknik, struktur och
+                  användarnytta behöver fungera tillsammans.
                 </p>
                 <p>
                   Genom min LIA fick jag erfarenhet av att arbeta i en mer
@@ -142,9 +142,8 @@ const About = () => {
                   frontend.
                 </p>
                 <p>
-                  Jag använder{" "}
-                  <strong className="text-foreground">Git</strong> och{" "}
-                  <strong className="text-foreground">GitHub</strong> för
+                  Jag använder <strong className="text-foreground">Git</strong>{" "}
+                  och <strong className="text-foreground">GitHub</strong> för
                   versionshantering och har arbetat med{" "}
                   <strong className="text-foreground">Azure DevOps</strong> och{" "}
                   <strong className="text-foreground">Azure</strong> i samband
@@ -164,10 +163,10 @@ const About = () => {
                 </p>
 
                 <p className="mt-8 text-foreground">
-                  Jag ser fram emot möjligheten att ta nästa steg som
-                  utvecklare och bidra med både teknisk nyfikenhet,
-                  ansvarstagande och arbetslivserfarenhet. Tveka inte att höra
-                  av er om ni har några frågor eller vill prata vidare.
+                  Jag ser fram emot möjligheten att ta nästa steg som utvecklare
+                  och bidra med både teknisk nyfikenhet, ansvarstagande och
+                  arbetslivserfarenhet. Tveka inte att höra av er om ni har
+                  några frågor eller vill prata vidare.
                 </p>
                 <p className="text-foreground">
                   Väl mött,
